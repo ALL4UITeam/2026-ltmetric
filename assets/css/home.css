@@ -300,7 +300,13 @@
 }
 .carbon__col--right{padding-bottom: 0;}
 .carbon__card {
+  position: relative;
   cursor: pointer;
+}
+.carbon__card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 .carbon__card-media {
   position: relative;
