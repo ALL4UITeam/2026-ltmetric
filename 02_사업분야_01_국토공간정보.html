@@ -35,25 +35,12 @@
   <script type="module" src="./assets/js/all.js"></script>
   <script type="module" src="./assets/js/sub.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
-
-  <style>
-    .biz-mock {
-      padding-top: var(--header, 10rem);
-      background: #fff;
-    }
-    .biz-mock__img {
-      display: block;
-      width: 1920px;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/business.css">
 </head>
 <body>
     <div id="LT" class="wrap LT">
         
-        <header class="header _sub" id="header">
+        <header class="header" id="header">
             <div class="header--container">
                 <div class="container-xxl header--wrap">
                     <h1 class="brand"><a href="./index.html" title="홈 바로가기"><span class="sr-only">올포랜드</span></a></h1>
@@ -213,10 +200,243 @@
                     </li> -->
                 </ul>
             </div>
-        </aside>                <main class="biz-mock">
-            <img class="biz-mock__img" src="assets/images/business/01_land.png" alt="국토 공간정보 시안">
-        </main>
+        </aside>
+        <div data-current="business" data-layout="sub" class="biz">
+            <div class="intro--banner biz">
+                <div class="intro--banner-background"></div>
+                <div class="intro--banner_point">
+                    <div class="intro--banner_title">
+                        <div class="container">
+                            <h2 class="page_title">BUSINESS</h2>
+                            <p class="sub_title_desc">사람과 공간 정보, 신기술을 보다 쉽게 연결하고 새로운 가치를 더하는 기업</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro--depth">
+                    <div class="container">
+                        <ul>
+                            <li><a class="active" href="02_사업분야_01_국토공간정보.html">국토 공간정보</a></li>
+                            <li><a href="02_사업분야_02_해양공간정보.html">해양 공간정보</a></li>
+                            <li><a href="02_사업분야_03_공간정보통합센싱.html">공간정보 통합센싱</a></li>
+                            <li><a href="02_사업분야_04_디지털트윈.html">디지털트윈</a></li>
+                            <li><a href="02_사업분야_05_지적측량.html">지적측량</a></li>
+                            <li><a href="02_사업분야_06_지능형영상관제.html">지능형 영상관제</a></li>
+                            <li><a href="02_사업분야_07_AICITY.html">AI CITY</a></li>
+                            <li><a href="02_사업분야_08_시스템운영관리.html">시스템 운영·관리</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="page--title">국토 공간정보</h2>
+
+            <section class="biz-lead">
+                <div class="biz-lead__inner">
+                    <h3 class="biz-lead__title">지상에서 우주까지,<br>공간을 데이터로 만드는 기술</h3>
+                    <p class="biz-lead__desc">
+                        지도 제작에서 시작해 항공측량, 디지털트윈, AI·월드모델로 기술 영역을 확장해 왔습니다.<br>
+                        정사영상과 DEM부터 모빌리티 보행지도와 변화탐지까지,<br>
+                        육상 공간의 현재를 기록하고 미래의 변화를 읽습니다.
+                    </p>
+                    <ul class="biz-lead__list">
+                        <li>항공사진 촬영 및 항공삼각측량 (전국 주요 권역)</li>
+                        <li>정사영상 제작 및 수치표고모형(DEM) 구축 (전국 주요 권역)</li>
+                        <li>고정밀 전자지도 구축 챌린지 사업 (구미·제주·의성 등)</li>
+                        <li>서울특별시 | S-Map(Virtual Seoul) 공간 지능화 사업</li>
+                        <li>인천광역시 | IFEZ 항공영상 및 3차원 공간정보 구축</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="biz-board">
+                <div class="biz-board__inner">
+                    <div class="biz-board__grid">
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">정사영상/실감정사영상</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">정사영상은 지형 기복을 보정한 영상이며, 실감정사영상은 인공지물의 기울어짐까지 보정하여 수직 상공에서 내려다본 형태로 구현한 고해상도 영상입니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-ortho.png" alt="정사영상"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">수치표고모형</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">건물이나 식생을 제외한 지표면의 고도값을 디지털로 구현하여, 지형의 기복을 입체적으로 분석할 수 있도록 제작한 3차원 기반 공간정보입니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-dem.png" alt="수치표고모형"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">3D 실내공간정보</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">다중이용시설의 실내 공간구조와 시설물 정보를 표준화하여 3차원 실내공간정보로 구축하고, 위치기반 서비스 및 재난안전, 시설관리 등 다양한 분야에 활용할 수 있도록 지원합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-indoor.png" alt="3D 실내공간정보"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">변화탐지</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">위성 또는 항공영상을 활용해 건물의 신축이나 철거뿐만 아니라 수직 변화까지 자동으로 식별할 수 있는 AI기반의 국토 모니터링 기술입니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-change.png" alt="변화탐지"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">모빌리티 보행지도</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">보도의 단차·경사도·장애물 등 환경정보를 정밀 매핑한 피지컬 AI 기반 3D 공간 데이터로, 자율주행 로봇 등 미래 모빌리티의 안전 주행을 위한 필수 인프라입니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-mobility.png" alt="모빌리티 보행지도"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">정밀도로지도</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">차선·규제선·신호등 등 도로 환경의 3차원 위치와 속성 정보를 정밀하게 구축하여 자율주행 차량의 안전 주행을 지원하는 공간정보 인프라입니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-road.png" alt="정밀도로지도"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card biz-card--wide">
+                            <h3 class="biz-card__title">해외사업 진출을 위한 K-모델</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-model__desc">엘티메트릭은 축적된 공간정보 기술력과 사업 경험을 기반으로 해외 유망 사업을 발굴하고, 파트너십을 통해 글로벌 시장 진출을 단계적으로 추진하고 있습니다.</p>
+                                <div class="biz-model__grid">
+                                    <div class="biz-block">
+                                        <h4 class="biz-block__title">한국형 공간정보 기술의 글로벌 확산 전략</h4>
+                                        <ul class="biz-pill">
+                                            <li class="biz-pill__item"><span><strong>한국형 모델</strong>- K-LIS<br>- K-Address</span></li>
+                                            <li class="biz-pill__item">현지 맞춤형<br>사업설계</li>
+                                            <li class="biz-pill__item">통합 공간정보<br>구축기술</li>
+                                            <li class="biz-pill__item">ODA·글로벌<br>파트너십</li>
+                                        </ul>
+                                    </div>
+                                    <div class="biz-block">
+                                        <h4 class="biz-block__title">사업추진 절차</h4>
+                                        <ol class="biz-step">
+                                            <li class="biz-step__item">
+                                                <span class="biz-step__icon"><img src="assets/images/business/icon-step-01.svg" alt=""></span>
+                                                <p>시장조사 및 수요발굴</p>
+                                            </li>
+                                            <li class="biz-step__arrow" aria-hidden="true"><img src="assets/images/business/icon-arrow.svg" alt=""></li>
+                                            <li class="biz-step__item">
+                                                <span class="biz-step__icon"><img src="assets/images/business/icon-step-02.svg" alt=""></span>
+                                                <p>현지 파트너십 구축</p>
+                                            </li>
+                                            <li class="biz-step__arrow" aria-hidden="true"><img src="assets/images/business/icon-arrow.svg" alt=""></li>
+                                            <li class="biz-step__item">
+                                                <span class="biz-step__icon"><img src="assets/images/business/icon-step-03.svg" alt=""></span>
+                                                <p>파일럿 사업 추진</p>
+                                            </li>
+                                            <li class="biz-step__arrow" aria-hidden="true"><img src="assets/images/business/icon-arrow.svg" alt=""></li>
+                                            <li class="biz-step__item">
+                                                <span class="biz-step__icon"><img src="assets/images/business/icon-step-04.svg" alt=""></span>
+                                                <p>시스템 구축 및 운영</p>
+                                            </li>
+                                            <li class="biz-step__arrow" aria-hidden="true"><img src="assets/images/business/icon-arrow.svg" alt=""></li>
+                                            <li class="biz-step__item">
+                                                <span class="biz-step__icon"><img src="assets/images/business/icon-step-05.svg" alt=""></span>
+                                                <p>서비스 확장 및 고도화</p>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="biz-block">
+                                        <h4 class="biz-block__title">K-LIS | 토지관리시스템 <span>(Land Information System)</span></h4>
+                                        <p class="biz-block__text">위성·항공·지적·토지·행정 정보를 통합하여 토지의 등록, 관리, 활용을 효율적으로 지원하는 디지털 토지관리 플랫폼</p>
+                                        <div class="biz-effect">
+                                            <p class="biz-effect__label">기대효과</p>
+                                            <ul class="biz-effect__list">
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-01.svg" alt=""></span><p>토지 관리의<br>정확성 향상</p></li>
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-02.svg" alt=""></span><p>행정 효율성 및<br>투명성 강화</p></li>
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-03.svg" alt=""></span><p>토지 활용<br>가치 극대화</p></li>
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-04.svg" alt=""></span><p>지속가능한<br>국토 관리 지원</p></li>
+                                            </ul>
+                                            <div class="biz-effect__map"><img src="assets/images/business/map-klis.png" alt="K-LIS"></div>
+                                        </div>
+                                    </div>
+                                    <div class="biz-block">
+                                        <h4 class="biz-block__title">K-Address | 주소정보관리시스템 <span>(Korea Address Information System)</span></h4>
+                                        <p class="biz-block__text">위성·항공·지적·토지·행정 정보를 통합하여 토지의 등록, 관리, 활용을 효율적으로 지원하는 디지털 토지관리 플랫폼</p>
+                                        <div class="biz-effect">
+                                            <p class="biz-effect__label">기대효과</p>
+                                            <ul class="biz-effect__list">
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-05.svg" alt=""></span><p>정확한 위치기반 서비스 제공</p></li>
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-06.svg" alt=""></span><p>행정·물류<br>효율성 향상</p></li>
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-07.svg" alt=""></span><p>재난대응 및<br>안전 관리 강화</p></li>
+                                                <li class="biz-effect__item"><span class="biz-effect__icon"><img src="assets/images/business/icon-effect-08.svg" alt=""></span><p>도시 경쟁력 및<br>편의성 제고</p></li>
+                                            </ul>
+                                            <div class="biz-effect__map"><img src="assets/images/business/map-address.png" alt="K-Address"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer--inner">
+        <div class="gutter-xxl">
+            <h2 class="footer-logo"><span class="sr-only">LTMetric</span></h2>
+            <div class="footer--content">
+                <div class="addr">
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>서울 연구소 : 서울특별시 금천구 가산디지털1로 145</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:02-853-9557">02-853-9557</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:02-853-9556">02-853-9556</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>(전주) 전라북도 전주시 덕진구 견훤로 209, 2층</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:063-241-8835">063-241-8835</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:063-244-8835">063-244-8835</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>E-mail</span>
+                            <a href="mailto:contact@ltmetric.com">contact@ltmetric.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <button class="dropdownButton" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu1">
+                        <span>Family Site</span>
+                        <span class="material-symbols-outlined arw">keyboard_arrow_down</span>
+                    </button>
+                    <div id="dropdownMenu1" class="dropdown-content" role="menu">
+                        <a href="https://gisalliance.co.kr/" role="menuitem" tabindex="-1" target="_blank">Alliance</a>
+                        <a href="https://neospectra.co.kr/" role="menuitem" tabindex="-1" target="_blank">네오스펙트라</a>
+                        <a href="https://all4land.com/" role="menuitem" tabindex="-1" target="_blank">올포랜드</a>
+                        <a href="http://mhgis.co.kr/" role="menuitem" tabindex="-1" target="_blank">명화지리정보</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--copy">
+                <div class="copyright">&copy; LTMETRIC. All rights reserved.</div>
+                <div class="links">
+                    <a href="#" target="_blank" title=""><span class="sr-only">그룹웨어</span></a>
+                    <a href="https://youtube.com/channel/UCSu15Bpzz4oWRWCqX166IIg?si=vCb4TkWVgu2O5CDW" target="_blank" title=""><span class="sr-only">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
     <button type="button" id="btnTop" title="맨 위로"><i></i></button>
     <script src="./js/modal.js"></script>

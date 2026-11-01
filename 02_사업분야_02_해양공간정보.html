@@ -35,25 +35,12 @@
   <script type="module" src="./assets/js/all.js"></script>
   <script type="module" src="./assets/js/sub.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
-
-  <style>
-    .biz-mock {
-      padding-top: var(--header, 10rem);
-      background: #fff;
-    }
-    .biz-mock__img {
-      display: block;
-      width: 1920px;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/business.css">
 </head>
 <body>
     <div id="LT" class="wrap LT">
         
-        <header class="header _sub" id="header">
+        <header class="header" id="header">
             <div class="header--container">
                 <div class="container-xxl header--wrap">
                     <h1 class="brand"><a href="./index.html" title="홈 바로가기"><span class="sr-only">올포랜드</span></a></h1>
@@ -213,10 +200,176 @@
                     </li> -->
                 </ul>
             </div>
-        </aside>                <main class="biz-mock">
-            <img class="biz-mock__img" src="assets/images/business/02_ocean.png" alt="해양 공간정보 시안">
-        </main>
+        </aside>
+        <div data-current="business" data-layout="sub" class="biz">
+            <div class="intro--banner biz biz--sea">
+                <div class="intro--banner-background"></div>
+                <div class="intro--banner_point">
+                    <div class="intro--banner_title">
+                        <div class="container">
+                            <h2 class="page_title">BUSINESS</h2>
+                            <p class="sub_title_desc">사람과 공간 정보, 신기술을 보다 쉽게 연결하고 새로운 가치를 더하는 기업</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro--depth">
+                    <div class="container">
+                        <ul>
+                            <li><a href="02_사업분야_01_국토공간정보.html">국토 공간정보</a></li>
+                            <li><a class="active" href="02_사업분야_02_해양공간정보.html">해양 공간정보</a></li>
+                            <li><a href="02_사업분야_03_공간정보통합센싱.html">공간정보 통합센싱</a></li>
+                            <li><a href="02_사업분야_04_디지털트윈.html">디지털트윈</a></li>
+                            <li><a href="02_사업분야_05_지적측량.html">지적측량</a></li>
+                            <li><a href="02_사업분야_06_지능형영상관제.html">지능형 영상관제</a></li>
+                            <li><a href="02_사업분야_07_AICITY.html">AI CITY</a></li>
+                            <li><a href="02_사업분야_08_시스템운영관리.html">시스템 운영·관리</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="page--title">해양 공간정보</h2>
+
+            <section class="biz-lead biz-lead--sea">
+                <div class="biz-lead__inner">
+                    <h3 class="biz-lead__title">해안선에서 해저까지, 바다를 데이터로 잇는 기술</h3>
+                    <p class="biz-lead__desc">
+                        첨단 장비와 전문기술로 해양 공간정보의 새로운 영역을 개척합니다.<br>
+                        항공수심라이다와 멀티빔 소나로 해안선·수심·해저지형을 정밀하게<br>
+                        데이터화합니다.
+                    </p>
+                    <div class="biz-lead__cols">
+                        <ul class="biz-lead__list">
+                            <li>해양영토 이용실태 원격조사</li>
+                            <li>해안선 조사</li>
+                            <li>항만해역 정밀수로측량</li>
+                            <li>국가어항 정밀조사</li>
+                        </ul>
+                        <ul class="biz-lead__list">
+                            <li>한국수산자원공단 산란서식장 조성해역 일반수로 측량</li>
+                            <li>한국수산자원공단 인공어초 사전영향조사</li>
+                            <li>한국수산자원공단 바다숲 사전영향조사</li>
+                            <li>고창군 해수욕장 활성화 지원사업</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="biz-board">
+                <div class="biz-board__inner">
+                    <div class="biz-board__grid">
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">수심측량</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">항만·연안·내수면의 해저 지형과 수심을 정밀 측정하여, 항만 건설, 해상풍력 입지 조사, 해도 제작 및 항해 안전 확보에 필요한 고정밀 해양공간정보를 제공합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-bathymetry.png" alt="수심측량"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">해안선 조사</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">국토의 형상을 결정하는 해안선의 체계적 관리를 위해 육지에서부터 해저까지 연속적인 지형정보를 구축하고 체계적인 해양 공간관리 정책을 지원합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-coastline.png" alt="해안선 조사"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">해양영토 이용실태 원격조사</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">해양공간의 원활한 이용‧개발을 위하여 해양영토에 대한 지속적이고 체계적인 정확한 해양정보 및 해상시설물 조사‧관리를 수행합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-territory.png" alt="해양영토 이용실태 원격조사"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">육상·내수면 통합 DEM 구축</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">항공수심라이다로 하상과 호저까지 아우르는 육상·내수면 통합 DEM을 구축하여 재난 대응부터 디지털트윈까지 활용 가능한 Seamless 공간정보 체계를 구축합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-inland-dem.png" alt="육상·내수면 통합 DEM 구축"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">해양영토 이용실태 원격조사</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">소나 수심 측량과 전문 잠수 조사 결과를 상호 연계하여, 인공어초의 배치 상태부터 유실 여부까지 해저 구조물을 정밀 모니터링하는 전문솔루션을 제공합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-reef.png" alt="인공어초 모니터링"></div>
+                            </div>
+                        </article>
+                        <article class="biz-card">
+                            <h3 class="biz-card__title">해양영토 이용실태 원격조사</h3>
+                            <div class="biz-card__box">
+                                <p class="biz-card__text">기후변화에 대응해 연안 침식을 막고 안전을 확보하고자, 육상 측량과 첨단 소나 수중 분석을 연계하여 해안 안팎의 지형 변화를 입체적으로 진단합니다.</p>
+                                <div class="biz-card__thumb"><img src="assets/images/business/thumb-erosion.png" alt="연안 침식 진단"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer--inner">
+        <div class="gutter-xxl">
+            <h2 class="footer-logo"><span class="sr-only">LTMetric</span></h2>
+            <div class="footer--content">
+                <div class="addr">
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>서울 연구소 : 서울특별시 금천구 가산디지털1로 145</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:02-853-9557">02-853-9557</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:02-853-9556">02-853-9556</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>(전주) 전라북도 전주시 덕진구 견훤로 209, 2층</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:063-241-8835">063-241-8835</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:063-244-8835">063-244-8835</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>E-mail</span>
+                            <a href="mailto:contact@ltmetric.com">contact@ltmetric.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <button class="dropdownButton" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu1">
+                        <span>Family Site</span>
+                        <span class="material-symbols-outlined arw">keyboard_arrow_down</span>
+                    </button>
+                    <div id="dropdownMenu1" class="dropdown-content" role="menu">
+                        <a href="https://gisalliance.co.kr/" role="menuitem" tabindex="-1" target="_blank">Alliance</a>
+                        <a href="https://neospectra.co.kr/" role="menuitem" tabindex="-1" target="_blank">네오스펙트라</a>
+                        <a href="https://all4land.com/" role="menuitem" tabindex="-1" target="_blank">올포랜드</a>
+                        <a href="http://mhgis.co.kr/" role="menuitem" tabindex="-1" target="_blank">명화지리정보</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--copy">
+                <div class="copyright">&copy; LTMETRIC. All rights reserved.</div>
+                <div class="links">
+                    <a href="#" target="_blank" title=""><span class="sr-only">그룹웨어</span></a>
+                    <a href="https://youtube.com/channel/UCSu15Bpzz4oWRWCqX166IIg?si=vCb4TkWVgu2O5CDW" target="_blank" title=""><span class="sr-only">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
     <button type="button" id="btnTop" title="맨 위로"><i></i></button>
     <script src="./js/modal.js"></script>

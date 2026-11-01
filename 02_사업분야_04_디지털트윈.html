@@ -35,25 +35,12 @@
   <script type="module" src="./assets/js/all.js"></script>
   <script type="module" src="./assets/js/sub.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
-
-  <style>
-    .biz-mock {
-      padding-top: var(--header, 10rem);
-      background: #fff;
-    }
-    .biz-mock__img {
-      display: block;
-      width: 1920px;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/business.css">
 </head>
 <body>
     <div id="LT" class="wrap LT">
         
-        <header class="header _sub" id="header">
+        <header class="header" id="header">
             <div class="header--container">
                 <div class="container-xxl header--wrap">
                     <h1 class="brand"><a href="./index.html" title="홈 바로가기"><span class="sr-only">올포랜드</span></a></h1>
@@ -213,10 +200,230 @@
                     </li> -->
                 </ul>
             </div>
-        </aside>                <main class="biz-mock">
-            <img class="biz-mock__img" src="assets/images/business/04_twin.png" alt="디지털트윈 시안">
-        </main>
+        </aside>
+        <div data-current="business" data-layout="sub" class="biz">
+            <div class="intro--banner biz biz--twin">
+                <div class="intro--banner-background"></div>
+                <div class="intro--banner_point">
+                    <div class="intro--banner_title">
+                        <div class="container">
+                            <h2 class="page_title">BUSINESS</h2>
+                            <p class="sub_title_desc">사람과 공간 정보, 신기술을 보다 쉽게 연결하고 새로운 가치를 더하는 기업</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro--depth">
+                    <div class="container">
+                        <ul>
+                            <li><a href="02_사업분야_01_국토공간정보.html">국토 공간정보</a></li>
+                            <li><a href="02_사업분야_02_해양공간정보.html">해양 공간정보</a></li>
+                            <li><a href="02_사업분야_03_공간정보통합센싱.html">공간정보 통합센싱</a></li>
+                            <li><a class="active" href="02_사업분야_04_디지털트윈.html">디지털트윈</a></li>
+                            <li><a href="02_사업분야_05_지적측량.html">지적측량</a></li>
+                            <li><a href="02_사업분야_06_지능형영상관제.html">지능형 영상관제</a></li>
+                            <li><a href="02_사업분야_07_AICITY.html">AI CITY</a></li>
+                            <li><a href="02_사업분야_08_시스템운영관리.html">시스템 운영·관리</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                        <h2 class="page--title">디지털트윈</h2>
+
+            <section class="biz-lead biz-lead--twin">
+                <div class="biz-lead__inner">
+                    <h3 class="biz-lead__title">정밀한 공간을 만들고, 분석 가능한 디지털 트윈으로 연결</h3>
+                    <p class="biz-lead__desc">
+                        항공영상·LiDAR·MMS 기반의 고정밀 3D 공간정보를 구축하고,<br>
+                        행정·시설· 환경 등 데이터를 유기적으로 결합합니다.<br>
+                        구축된 가상공간에서 현황을 정밀하게 진단하고 변화를 시뮬레이션하여,<br>
+                        도시 및 시설 관리의 정확하고 합리적인 의사결정을 지원합니다.
+                    </p>
+                    <ul class="biz-lead__list">
+                        <li>AI기반 3차원 공간정보 자동제작 기술개발</li>
+                        <li>춘천시 의암호 디지털 트윈 구축</li>
+                        <li>장성군 디지털 트윈국토 지자체 시범사업</li>
+                        <li>포항시 AI 기반 인파 분석 플랫폼 구축 용역</li>
+                        <li>GTX 환승센터 3D 모델 구축 및 핵심 알고리즘 테스트 시작품 제작</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="twin">
+                <div class="twin__inner">
+                    <article class="twin-sec">
+                        <h3 class="twin-sec__title">고정밀 3D 기반 디지털트윈 <span class="twin-sec__en">| DIGITAL TWIN x PRECISION 3D</span></h3>
+                        <div class="twin-sec__box">
+                            <div class="biz-block">
+                                <h4 class="biz-block__title">고정밀 3D 공간을 통한 도시의 현재 진단과 미래 예측</h4>
+                                <p class="biz-block__text">현실 공간을 고정밀 3D로 재현하고 행정·시설 데이터를 결합해 현재 상태를 진단하며, 개발·안전·환경 변화를 시뮬레이션하여 정책과 운영의 판단 근거를 제공합니다.</p>
+                            </div>
+                            <div class="twin-cards">
+                                <article class="twin-card">
+                                    <div class="twin-card__shot">
+                                        <img src="assets/images/business/twin-space.png" alt="정밀 3D 공간 구축">
+                                        <p class="twin-card__name">정밀 3D 공간 구축</p>
+                                    </div>
+                                    <p class="twin-card__cap">지형·건물·시설물을 실제 형상과 재질로 정밀 재현</p>
+                                </article>
+                                <article class="twin-card">
+                                    <div class="twin-card__shot">
+                                        <img src="assets/images/business/twin-sim.png" alt="개발 영향 시뮬레이션">
+                                        <p class="twin-card__name">개발 영향 시뮬레이션</p>
+                                    </div>
+                                    <p class="twin-card__cap">가상 건축물 배치 전후의 조망·가시 변화 비교</p>
+                                </article>
+                                <article class="twin-card">
+                                    <div class="twin-card__shot">
+                                        <img src="assets/images/business/twin-water.png" alt="수환경·토사 유출량 분석">
+                                        <p class="twin-card__name">수환경·토사 유출량 분석</p>
+                                    </div>
+                                    <p class="twin-card__cap">수위·수심 변화와 토사 유출량 정보 분석</p>
+                                </article>
+                                <article class="twin-card">
+                                    <div class="twin-card__shot">
+                                        <img src="assets/images/business/twin-change.png" alt="국토 변화 시계열 분석">
+                                        <p class="twin-card__name">국토 변화 시계열 분석</p>
+                                    </div>
+                                    <p class="twin-card__cap">연도별 항공영상을 비교해 개발·토지이용 변화 파악</p>
+                                </article>
+                                <article class="twin-card">
+                                    <div class="twin-card__shot">
+                                        <img src="assets/images/business/twin-safety.png" alt="도시 안전 현황 분석">
+                                        <p class="twin-card__name">도시 안전 현황 분석</p>
+                                    </div>
+                                    <p class="twin-card__cap">CCTV 가시영역을 중첩해 사각지대 및 취약구간 분석</p>
+                                </article>
+                                <article class="twin-card">
+                                    <div class="twin-card__shot">
+                                        <img src="assets/images/business/twin-garden.png" alt="정원 조성 시뮬레이션">
+                                        <p class="twin-card__name">정원 조성 시뮬레이션</p>
+                                    </div>
+                                    <p class="twin-card__cap">식재와 시설물 배치를 가상공간에서 사전 검토</p>
+                                </article>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="twin-sec">
+                        <h3 class="twin-sec__title">AI 기반 3D 공간정보 자동제작 <span class="twin-sec__en twin-sec__en--lg">| AI-BASED 3D AUTOMATION</span></h3>
+                        <div class="twin-sec__box">
+                            <div class="biz-block">
+                                <h4 class="biz-block__title">항공영상 한 장을 AI로 분석하여 완성된 3D 건물로 자동 전환</h4>
+                                <p class="biz-block__text">AI가 건물을 탐지해 지붕·벽면 구조를 해석하고 높이·형상을 복원한 뒤 텍스처까지 적용해 3D 모델을 자동 생성함으로써, 반복 수작업을 줄이고 대규모 제작 속도와 모델 품질의 일관성을 높입니다.</p>
+                            </div>
+                            <ol class="twin-flow">
+                                <li class="twin-flow__item">
+                                    <div class="twin-flow__shot">
+                                        <img src="assets/images/business/twin-step-01.png" alt="AI 영상 분석">
+                                        <p class="twin-flow__bar twin-flow__bar--1"><span>1</span>AI 영상 분석</p>
+                                    </div>
+                                    <p class="twin-flow__cap">건물 후보 영역 판별</p>
+                                </li>
+                                <li class="twin-flow__arrow" aria-hidden="true"><img src="assets/images/business/icon-flow-arrow.svg" alt=""></li>
+                                <li class="twin-flow__item">
+                                    <div class="twin-flow__shot">
+                                        <img src="assets/images/business/twin-step-02.png" alt="객체 자동 추출">
+                                        <p class="twin-flow__bar twin-flow__bar--2"><span>2</span>객체 자동 추출</p>
+                                    </div>
+                                    <p class="twin-flow__cap">건물 외곽선 검출</p>
+                                </li>
+                                <li class="twin-flow__arrow" aria-hidden="true"><img src="assets/images/business/icon-flow-arrow.svg" alt=""></li>
+                                <li class="twin-flow__item">
+                                    <div class="twin-flow__shot">
+                                        <img src="assets/images/business/twin-step-03.png" alt="구조·면 해석">
+                                        <p class="twin-flow__bar twin-flow__bar--3"><span>3</span>구조·면 해석</p>
+                                    </div>
+                                    <p class="twin-flow__cap">지붕·벽면 자동 분할</p>
+                                </li>
+                                <li class="twin-flow__arrow" aria-hidden="true"><img src="assets/images/business/icon-flow-arrow.svg" alt=""></li>
+                                <li class="twin-flow__item">
+                                    <div class="twin-flow__shot">
+                                        <img src="assets/images/business/twin-step-04.png" alt="3D 형상 복원">
+                                        <p class="twin-flow__bar twin-flow__bar--4"><span>4</span>3D 형상 복원</p>
+                                    </div>
+                                    <p class="twin-flow__cap">높이·형상 자동 생성</p>
+                                </li>
+                                <li class="twin-flow__arrow" aria-hidden="true"><img src="assets/images/business/icon-flow-arrow.svg" alt=""></li>
+                                <li class="twin-flow__item">
+                                    <div class="twin-flow__shot">
+                                        <img src="assets/images/business/twin-step-05.png" alt="텍스처 완성">
+                                        <p class="twin-flow__bar twin-flow__bar--5"><span>5</span>텍스처 완성</p>
+                                    </div>
+                                    <p class="twin-flow__cap">현실형 3D 건물 제작</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer--inner">
+        <div class="gutter-xxl">
+            <h2 class="footer-logo"><span class="sr-only">LTMetric</span></h2>
+            <div class="footer--content">
+                <div class="addr">
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>서울 연구소 : 서울특별시 금천구 가산디지털1로 145</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:02-853-9557">02-853-9557</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:02-853-9556">02-853-9556</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>(전주) 전라북도 전주시 덕진구 견훤로 209, 2층</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:063-241-8835">063-241-8835</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:063-244-8835">063-244-8835</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>E-mail</span>
+                            <a href="mailto:contact@ltmetric.com">contact@ltmetric.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <button class="dropdownButton" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu1">
+                        <span>Family Site</span>
+                        <span class="material-symbols-outlined arw">keyboard_arrow_down</span>
+                    </button>
+                    <div id="dropdownMenu1" class="dropdown-content" role="menu">
+                        <a href="https://gisalliance.co.kr/" role="menuitem" tabindex="-1" target="_blank">Alliance</a>
+                        <a href="https://neospectra.co.kr/" role="menuitem" tabindex="-1" target="_blank">네오스펙트라</a>
+                        <a href="https://all4land.com/" role="menuitem" tabindex="-1" target="_blank">올포랜드</a>
+                        <a href="http://mhgis.co.kr/" role="menuitem" tabindex="-1" target="_blank">명화지리정보</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--copy">
+                <div class="copyright">&copy; LTMETRIC. All rights reserved.</div>
+                <div class="links">
+                    <a href="#" target="_blank" title=""><span class="sr-only">그룹웨어</span></a>
+                    <a href="https://youtube.com/channel/UCSu15Bpzz4oWRWCqX166IIg?si=vCb4TkWVgu2O5CDW" target="_blank" title=""><span class="sr-only">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
     <button type="button" id="btnTop" title="맨 위로"><i></i></button>
     <script src="./js/modal.js"></script>

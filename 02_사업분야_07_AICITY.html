@@ -35,25 +35,12 @@
   <script type="module" src="./assets/js/all.js"></script>
   <script type="module" src="./assets/js/sub.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
-
-  <style>
-    .biz-mock {
-      padding-top: var(--header, 10rem);
-      background: #fff;
-    }
-    .biz-mock__img {
-      display: block;
-      width: 1920px;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/business.css">
 </head>
 <body>
     <div id="LT" class="wrap LT">
         
-        <header class="header _sub" id="header">
+        <header class="header" id="header">
             <div class="header--container">
                 <div class="container-xxl header--wrap">
                     <h1 class="brand"><a href="./index.html" title="홈 바로가기"><span class="sr-only">올포랜드</span></a></h1>
@@ -213,10 +200,282 @@
                     </li> -->
                 </ul>
             </div>
-        </aside>                <main class="biz-mock">
-            <img class="biz-mock__img" src="assets/images/business/07_aicity.png" alt="AI CITY 시안">
-        </main>
+        </aside>
+        <div data-current="business" data-layout="sub" class="biz biz--city">
+            <div class="intro--banner biz">
+                <div class="intro--banner-background"></div>
+                <div class="intro--banner_point">
+                    <div class="intro--banner_title">
+                        <div class="container">
+                            <h2 class="page_title">BUSINESS</h2>
+                            <p class="sub_title_desc">사람과 공간 정보, 신기술을 보다 쉽게 연결하고 새로운 가치를 더하는 기업</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro--depth">
+                    <div class="container">
+                        <ul>
+                            <li><a href="02_사업분야_01_국토공간정보.html">국토 공간정보</a></li>
+                            <li><a href="02_사업분야_02_해양공간정보.html">해양 공간정보</a></li>
+                            <li><a href="02_사업분야_03_공간정보통합센싱.html">공간정보 통합센싱</a></li>
+                            <li><a href="02_사업분야_04_디지털트윈.html">디지털트윈</a></li>
+                            <li><a href="02_사업분야_05_지적측량.html">지적측량</a></li>
+                            <li><a href="02_사업분야_06_지능형영상관제.html">지능형 영상관제</a></li>
+                            <li><a class="active" href="02_사업분야_07_AICITY.html">AI CITY</a></li>
+                            <li><a href="02_사업분야_08_시스템운영관리.html">시스템 운영·관리</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="page--title">AI CITY</h2>
+
+            <section class="city-lead city-lead--end">
+                <div class="city-lead__inner">
+                    <div class="city-lead__copy">
+                        <h3 class="city-lead__title">AI CITY</h3>
+                        <p class="city-lead__sub">도시를 연결하고, 지능을 더합니다.</p>
+                        <p class="city-lead__desc">AI CITY는 다양한 도시 데이터를 연결하고 AI로 상황을 이해·예측·최적화하여,<br>더욱 안전하고 효율적인 도시 운영을 구현합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="city">
+                <div class="city__inner">
+                    <h3 class="city__title">AI CITY가 만드는 가치</h3>
+                    <ul class="city-value">
+                        <li class="city-value__item">
+                            <span class="city-value__icon"><img src="assets/images/business/city-ico-safe.svg" alt="" width="38.4453" height="46"></span>
+                            <div class="city-value__txt">
+                                <strong class="city-value__name">안전한 도시</strong>
+                                <p class="city-value__text">위험을 조기에 감지하고<br>예측하여 시민의 생명과<br>자산을 보호</p>
+                            </div>
+                        </li>
+                        <li class="city-value__item">
+                            <span class="city-value__icon"><img src="assets/images/business/city-ico-eff.svg" alt="" width="45.9774" height="46"></span>
+                            <div class="city-value__txt">
+                                <strong class="city-value__name">효율적인 도시</strong>
+                                <p class="city-value__text">교통·에너지·시설을<br>최적화하여<br>도시 운영의 효율성 향상</p>
+                            </div>
+                        </li>
+                        <li class="city-value__item">
+                            <span class="city-value__icon"><img src="assets/images/business/city-ico-sustain.svg" alt="" width="45.9797" height="46"></span>
+                            <div class="city-value__txt">
+                                <strong class="city-value__name">지속가능한 도시</strong>
+                                <p class="city-value__text">데이터 기반<br>의사결정으로 탄소중립과<br>지속 가능한 도시 환경 구현</p>
+                            </div>
+                        </li>
+                        <li class="city-value__item">
+                            <span class="city-value__icon"><img src="assets/images/business/city-ico-citizen.svg" alt="" width="39.9228" height="46"></span>
+                            <div class="city-value__txt">
+                                <strong class="city-value__name">시민 중심 도시</strong>
+                                <p class="city-value__text">시민의 삶의 질을 높이는<br>맞춤형 서비스와<br>데이터 기반 서비스 실현</p>
+                            </div>
+                        </li>
+                        <li class="city-value__item">
+                            <span class="city-value__icon"><img src="assets/images/business/city-ico-smart.svg" alt="" width="46.0151" height="46"></span>
+                            <div class="city-value__txt">
+                                <strong class="city-value__name">스마트한 의사결정</strong>
+                                <p class="city-value__text">시뮬레이션과 예측으로<br>정책 효과를 사전 검증하고<br>신속한 의사결정 지원</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="city-pilot">
+                    <h3 class="city-pilot__title">천안·아산 AI 특화 시범도시 사업</h3>
+                    <div class="city-pilot__stage">
+                    <img class="city-pilot__bg" src="assets/images/business/city-map.png" alt="">
+                    <div class="city-pilot__inner">
+                        <div class="city-pilot__stats">
+                            <div class="city-pilot__stat">
+                                <span class="city-pilot__label city-pilot__label--period">사업기간</span>
+                                <p class="city-pilot__year">2026년 ~ 2030년</p>
+                                <p class="city-pilot__note">(5년간)</p>
+                            </div>
+                            <div class="city-pilot__stat city-pilot__stat--cost">
+                                <span class="city-pilot__label city-pilot__label--cost">총 사업비</span>
+                                <p class="city-pilot__cost"><strong>6,109</strong> 억 원</p>
+                            </div>
+                        </div>
+                        <div class="city-pilot__bar">
+                            <span class="city-pilot__chip">AI CITY 핵심구축 영역</span>
+                            <img class="city-pilot__line" src="assets/images/business/city-line.svg" alt="" width="198" height="2">
+                            <strong class="city-pilot__mid">도시 인지형 디지털트윈</strong>
+                            <img class="city-pilot__line" src="assets/images/business/city-line.svg" alt="" width="198" height="2">
+                            <span class="city-pilot__chip">엘티메트릭 설계 및 구축</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="city__inner">
+                    <div class="city-twin">
+                        <article class="city-twin__card">
+                            <div class="city-twin__txt">
+                                <p class="city-twin__kicker">사람에게 트윈은</p>
+                                <p class="city-twin__headline">도시를 보는 화면입니다</p>
+                            </div>
+                            <div class="city-twin__shot">
+                                <img src="assets/images/business/city-twin-human.png" alt="사람이 바라보는 도시 트윈 화면">
+                            </div>
+                        </article>
+                        <img class="city-twin__link" src="assets/images/business/city-dots.svg" alt="" width="53" height="23">
+                        <div class="city-twin__mark">
+                            <img src="assets/images/business/city-ai.svg" alt="" width="80.0276" height="80">
+                            <p class="city-twin__ask">인지형 디지털트윈이란?</p>
+                            <p class="city-twin__answer">AI가 도시를<br>인지하기 위한 기반</p>
+                        </div>
+                        <img class="city-twin__link" src="assets/images/business/city-dots.svg" alt="" width="53" height="23">
+                        <article class="city-twin__card">
+                            <div class="city-twin__txt">
+                                <p class="city-twin__kicker">AI에게 트윈은</p>
+                                <p class="city-twin__headline">도시를 이해하는 공간입니다</p>
+                            </div>
+                            <div class="city-twin__shot">
+                                <img src="assets/images/business/city-twin-ai.png" alt="AI가 이해하는 도시 공간">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="city-lead">
+                <div class="city-lead__inner">
+                    <div class="city-lead__copy">
+                        <h3 class="city-lead__title">인지형 디지털트윈 체계</h3>
+                        <p class="city-lead__sub">도시를 인지하고, 판단과 실행으로 연결하는 공간지능</p>
+                        <p class="city-lead__desc">엘티메트릭은 천안·아산 AI 특화 시범도시에서 도시 상황을 인지·추론하는<br>디지털트윈을 구축해, 물리 세계와 AI 에이전트를 연결합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="city">
+                <div class="city__inner">
+                    <h3 class="city__title">인지형 디지털트윈 프로세스</h3>
+                    <ol class="city-proc">
+                        <li class="city-proc__item">
+                            <p class="city-proc__badge city-proc__badge--represent"><img src="assets/images/business/city-step-01.png" alt="" width="19" height="20"><span>REPRESENT</span></p>
+                            <div class="city-proc__txt">
+                                <strong class="city-proc__name">공간데이터 정제・표준화</strong>
+                                <p class="city-proc__text">국가 공간정보·BIM 등<br>다기종 데이터를 CityGML로<br>통합하여, 우선 대상지에 LOD3급<br>고정밀 3D 도시모델을 구축합니다.</p>
+                            </div>
+                            <img class="city-proc__shot" src="assets/images/business/city-proc-01.png" alt="공간데이터 정제와 3D 도시모델" width="177" height="117">
+                        </li>
+                        <li class="city-proc__item">
+                            <p class="city-proc__badge city-proc__badge--perceive"><img src="assets/images/business/city-step-02.png" alt="" width="22" height="20"><span>PERCEIVE</span></p>
+                            <div class="city-proc__txt">
+                                <strong class="city-proc__name">실시간 도시 상황 인지</strong>
+                                <p class="city-proc__text">엣지·온디바이스 AI의 실시간<br>객체 인식 정보를 표준 프로토콜로<br>수집하여 경량 도시모델과<br>실시간 동기화합니다.</p>
+                            </div>
+                            <img class="city-proc__shot" src="assets/images/business/city-proc-02.png" alt="실시간 도시 상황 인지" width="170" height="117">
+                        </li>
+                        <li class="city-proc__item">
+                            <p class="city-proc__badge city-proc__badge--reason"><img src="assets/images/business/city-step-03.png" alt="" width="20" height="20"><span>REASON</span></p>
+                            <div class="city-proc__txt">
+                                <strong class="city-proc__name">도시 상황추론·관제</strong>
+                                <p class="city-proc__text">정적·동적 객체 간 관계를<br>공간 지식 그래프로 구조화하고,<br>자연어 질의 기반으로 복합<br>상황을 해석합니다.</p>
+                            </div>
+                            <img class="city-proc__shot" src="assets/images/business/city-proc-03.png" alt="도시 상황추론과 관제" width="241" height="117">
+                        </li>
+                        <li class="city-proc__item">
+                            <p class="city-proc__badge city-proc__badge--act"><img src="assets/images/business/city-step-04.png" alt="" width="20" height="20"><span>ACT</span></p>
+                            <div class="city-proc__txt">
+                                <strong class="city-proc__name">인파・로봇 반응형 경로 최적화</strong>
+                                <p class="city-proc__text">보행 인파 분석 결과를 반영해<br>실내외 통합 위상 네트워크를<br>재구성하고, 피지컬 AI 경로 탐색<br>기반을 제공합니다.</p>
+                            </div>
+                            <img class="city-proc__shot" src="assets/images/business/city-proc-04.png" alt="인파와 로봇 경로 최적화" width="280" height="117">
+                        </li>
+                        <li class="city-proc__item">
+                            <p class="city-proc__badge city-proc__badge--evolve"><img src="assets/images/business/city-step-05.png" alt="" width="20" height="20"><span>EVOLVE</span></p>
+                            <div class="city-proc__txt">
+                                <strong class="city-proc__name">학습데이터 생성・재학습</strong>
+                                <p class="city-proc__text">시뮬레이션 물리 조건을 월드<br>파운데이션 모델 입력으로 활용해<br>희소 상황 데이터를 생성하고<br>재학습을 지원합니다.</p>
+                            </div>
+                            <img class="city-proc__shot" src="assets/images/business/city-proc-05.png" alt="학습데이터 생성과 재학습" width="233" height="117">
+                        </li>
+                        <li class="city-proc__item">
+                            <p class="city-proc__badge city-proc__badge--policy"><img src="assets/images/business/city-step-06.png" alt="" width="20" height="20"><span>POLICY</span></p>
+                            <div class="city-proc__txt">
+                                <strong class="city-proc__name">정책 지원 디지털 트윈</strong>
+                                <p class="city-proc__text">고정밀 공간 데이터와<br>시뮬레이션을 결합해<br>도시계획·교통·재난 정책의<br>사전 검증 환경을 제공합니다.</p>
+                            </div>
+                            <img class="city-proc__shot" src="assets/images/business/city-proc-06.png" alt="정책 지원 디지털 트윈" width="189" height="117">
+                        </li>
+                    </ol>
+                    <p class="city-slogan">
+                        <span class="sr-only">엘티메트릭은 정밀 공간정보와 AI기술로 더 안전하고 지속 가능한 지능형 도시를 구현합니다.</span>
+                        <span class="city-slogan__mark" aria-hidden="true"></span>
+                    </p>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer--inner">
+        <div class="gutter-xxl">
+            <h2 class="footer-logo"><span class="sr-only">LTMetric</span></h2>
+            <div class="footer--content">
+                <div class="addr">
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>서울 연구소 : 서울특별시 금천구 가산디지털1로 145</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:02-853-9557">02-853-9557</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:02-853-9556">02-853-9556</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>(전주) 전라북도 전주시 덕진구 견훤로 209, 2층</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:063-241-8835">063-241-8835</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:063-244-8835">063-244-8835</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>E-mail</span>
+                            <a href="mailto:contact@ltmetric.com">contact@ltmetric.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <button class="dropdownButton" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu1">
+                        <span>Family Site</span>
+                        <span class="material-symbols-outlined arw">keyboard_arrow_down</span>
+                    </button>
+                    <div id="dropdownMenu1" class="dropdown-content" role="menu">
+                        <a href="https://gisalliance.co.kr/" role="menuitem" tabindex="-1" target="_blank">Alliance</a>
+                        <a href="https://neospectra.co.kr/" role="menuitem" tabindex="-1" target="_blank">네오스펙트라</a>
+                        <a href="https://all4land.com/" role="menuitem" tabindex="-1" target="_blank">올포랜드</a>
+                        <a href="http://mhgis.co.kr/" role="menuitem" tabindex="-1" target="_blank">명화지리정보</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--copy">
+                <div class="copyright">&copy; LTMETRIC. All rights reserved.</div>
+                <div class="links">
+                    <a href="#" target="_blank" title=""><span class="sr-only">그룹웨어</span></a>
+                    <a href="https://youtube.com/channel/UCSu15Bpzz4oWRWCqX166IIg?si=vCb4TkWVgu2O5CDW" target="_blank" title=""><span class="sr-only">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
     <button type="button" id="btnTop" title="맨 위로"><i></i></button>
     <script src="./js/modal.js"></script>

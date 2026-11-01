@@ -35,25 +35,12 @@
   <script type="module" src="./assets/js/all.js"></script>
   <script type="module" src="./assets/js/sub.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
-
-  <style>
-    .biz-mock {
-      padding-top: var(--header, 10rem);
-      background: #fff;
-    }
-    .biz-mock__img {
-      display: block;
-      width: 1920px;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/business.css">
 </head>
 <body>
     <div id="LT" class="wrap LT">
-        
-        <header class="header _sub" id="header">
+
+        <header class="header" id="header">
             <div class="header--container">
                 <div class="container-xxl header--wrap">
                     <h1 class="brand"><a href="./index.html" title="홈 바로가기"><span class="sr-only">올포랜드</span></a></h1>
@@ -213,10 +200,327 @@
                     </li> -->
                 </ul>
             </div>
-        </aside>                <main class="biz-mock">
-            <img class="biz-mock__img" src="assets/images/business/08_system.png" alt="시스템 운영·관리 시안">
-        </main>
+        </aside>
+        <div data-current="business" data-layout="sub" class="biz biz--sys">
+            <div class="intro--banner biz">
+                <div class="intro--banner-background"></div>
+                <div class="intro--banner_point">
+                    <div class="intro--banner_title">
+                        <div class="container">
+                            <h2 class="page_title">BUSINESS</h2>
+                            <p class="sub_title_desc">사람과 공간 정보, 신기술을 보다 쉽게 연결하고 새로운 가치를 더하는 기업</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro--depth">
+                    <div class="container">
+                        <ul>
+                            <li><a href="02_사업분야_01_국토공간정보.html">국토 공간정보</a></li>
+                            <li><a href="02_사업분야_02_해양공간정보.html">해양 공간정보</a></li>
+                            <li><a href="02_사업분야_03_공간정보통합센싱.html">공간정보 통합센싱</a></li>
+                            <li><a href="02_사업분야_04_디지털트윈.html">디지털트윈</a></li>
+                            <li><a href="02_사업분야_05_지적측량.html">지적측량</a></li>
+                            <li><a href="02_사업분야_06_지능형영상관제.html">지능형 영상관제</a></li>
+                            <li><a href="02_사업분야_07_AICITY.html">AI CITY</a></li>
+                            <li><a class="active" href="02_사업분야_08_시스템운영관리.html">시스템 운영·관리</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sys-head">
+                <h2 class="page--title">시스템 운영·관리</h2>
+                <p class="sys-intro">시스템 운공간정보 기반 시스템과 서비스의 안정적인 운영을 위해 체계적인 유지관리 서비스를 제공합니다.<br>시스템·데이터 관리와 신속한 장애 대응, 지속적인 기능 개선을 통해 안정적이고 효율적인 운영 환경을 지원합니다.</p>
+            </div>
+
+            <section class="sys-lead sys-lead--addr">
+                <div class="sys-lead__copy">
+                    <p class="sys-lead__kicker">행정안전부 한국지역정보개발원</p>
+                    <h3 class="sys-lead__title">주소정보관리시스템 운영・유지관리</h3>
+                </div>
+                <ul class="sys-stats">
+                    <li class="sys-stat">
+                        <img class="sys-stat__ico" src="assets/images/business/sys-ico-building.svg" alt="" width="60" height="60">
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>24,689</span> 개</p>
+                            <p class="sys-stat__label">주소정보 DB 활용 기관</p>
+                        </div>
+                    </li>
+                    <li class="sys-stat">
+                        <img class="sys-stat__ico" src="assets/images/business/sys-ico-city.svg" alt="" width="60" height="60">
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>11.6</span> 만개</p>
+                            <p class="sys-stat__label">연계기관</p>
+                        </div>
+                    </li>
+                    <li class="sys-stat">
+                        <img class="sys-stat__ico" src="assets/images/business/sys-ico-user.svg" alt="" width="60" height="60">
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>6.8</span> 천만명</p>
+                            <p class="sys-stat__label">연간 접속자 수</p>
+                        </div>
+                    </li>
+                    <li class="sys-stat">
+                        <img class="sys-stat__ico" src="assets/images/business/sys-ico-screen.svg" alt="" width="60" height="60">
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>25.9</span> 억건</p>
+                            <p class="sys-stat__label">연간 검색 건수</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="sys-body">
+                <div class="sys-copy">
+                    <h3 class="sys-copy__title">국민이 신뢰하고, 기관과 기업이 활용하는</h3>
+                    <p class="sys-grad sys-grad--addr"><span class="sr-only">대한민국 대표 주소정보 서비스를 안정적으로 운영합니다.</span></p>
+                    <p class="sys-copy__desc">도로명주소, 건물번호 등 국가 주소정보를 관리 · 제공하는 주소정보관리시스템을<br>24시간 안정적으로 운영하며, 대규모 이용환경과 다양한 연계를 지원합니다.</p>
+                </div>
+
+                <div class="sys-frame">
+                    <img class="sys-frame__img" src="assets/images/business/sys-flow.png" alt="주소정보 운영 흐름">
+                </div>
+
+                <section class="sys-block">
+                    <h3 class="sys-block__title">주소정보 운영체계 고도화</h3>
+                    <div class="sys-steps">
+                        <article class="sys-step">
+                            <span class="sys-step__no">1</span>
+                            <span class="sys-shot" style="width:11.8rem;height:11rem">
+                                <img src="assets/images/business/sys-cloud.png" alt="" style="width:307.51%;height:110.2%;left:-4.11%;top:-4.57%">
+                            </span>
+                            <h4 class="sys-step__name">분산 시스템 통합</h4>
+                            <p class="sys-step__text">246개 분산 시스템을<br>클라우드 기반 통합 환경으로 전환</p>
+                        </article>
+                        <img class="sys-steps__arrow" src="assets/images/business/sys-arrow.svg" alt="" width="12" height="21">
+                        <article class="sys-step">
+                            <span class="sys-step__no">2</span>
+                            <span class="sys-shot" style="width:12.8rem;height:11rem">
+                                <img src="assets/images/business/sys-rebuild.png" alt="" style="width:128.83%;height:100%;left:-16.25%;top:0">
+                            </span>
+                            <h4 class="sys-step__name">시스템·데이터 전면 재구축</h4>
+                            <p class="sys-step__text">분산된 시스템과 데이터를<br>통합·표준화하여 운영체계 고도화</p>
+                        </article>
+                        <img class="sys-steps__arrow sys-steps__arrow--next" src="assets/images/business/sys-arrow2.svg" alt="" width="11" height="21">
+                        <article class="sys-step">
+                            <span class="sys-step__no">3</span>
+                            <span class="sys-shot" style="width:12.2rem;height:11rem">
+                                <img src="assets/images/business/sys-cloud.png" alt="" style="width:367.34%;height:136.35%;left:-259.39%;top:-18.46%">
+                            </span>
+                            <h4 class="sys-step__name">안정적인 주소정보 서비스</h4>
+                            <p class="sys-step__text">대규모 이용환경에서도<br>안정적이고 신뢰도 높은 서비스 제공</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="sys-block">
+                    <h3 class="sys-block__title">주소정보관리시스템 주요 운영 영역</h3>
+                    <ul class="sys-areas">
+                        <li class="sys-area">
+                            <div class="sys-area__head">
+                                <p class="sys-area__kicker">CLOUD</p>
+                                <h4 class="sys-area__name">클라우드 기반 통합 운영</h4>
+                            </div>
+                            <p class="sys-area__text">통합 인프라 기반의 안정적인 시스템 운영 및 효율적인 자원 관리</p>
+                        </li>
+                        <li class="sys-area">
+                            <div class="sys-area__head">
+                                <p class="sys-area__kicker">AI</p>
+                                <h4 class="sys-area__name">AI 기반 건물정보 자동 생성</h4>
+                            </div>
+                            <p class="sys-area__text">건축도면을 AI로 분석하여<br>건물정보 자동 생성 및 데이터 구축 지원</p>
+                        </li>
+                        <li class="sys-area">
+                            <div class="sys-area__head">
+                                <p class="sys-area__kicker">DATA &amp; API</p>
+                                <h4 class="sys-area__name">주소정보 데이터 · API 서비스</h4>
+                            </div>
+                            <p class="sys-area__text">다양한 주소정보 데이터와<br>API를 제공하고 외부 서비스와 연계</p>
+                        </li>
+                        <li class="sys-area">
+                            <div class="sys-area__head">
+                                <p class="sys-area__kicker">INFRA &amp; MONITORING</p>
+                                <h4 class="sys-area__name">대규모 인프라 및 통합관제</h4>
+                            </div>
+                            <p class="sys-area__text">H/W 127대·S/W 860식 규모의 인프라를 안정적으로 운영하고 실시간 통합관제</p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="sys-lead sys-lead--land">
+                <div class="sys-lead__copy">
+                    <p class="sys-lead__kicker">국토교통부 국토지리정보원</p>
+                    <h3 class="sys-lead__title">국토정보플랫폼 운영・유지관리</h3>
+                </div>
+                <ul class="sys-stats sys-stats--land">
+                    <li class="sys-stat">
+                        <img class="sys-stat__ico" src="assets/images/business/sys-ico-user2.svg" alt="" width="60" height="60">
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>407</span> 만명</p>
+                            <p class="sys-stat__label">연간 접속자 수</p>
+                        </div>
+                    </li>
+                    <li class="sys-stat sys-stat--tight">
+                        <img class="sys-stat__ico" src="assets/images/business/sys-ico-user3.svg" alt="" width="60" height="60">
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>1,195</span> 만건</p>
+                            <p class="sys-stat__label">연간 유통건수</p>
+                        </div>
+                    </li>
+                    <li class="sys-stat sys-stat--tight">
+                        <span class="sys-stat__circle"><img src="assets/images/business/sys-ico-api.svg" alt="" width="30" height="30"></span>
+                        <div class="sys-stat__txt">
+                            <p class="sys-stat__num"><span>5,578</span> 만건</p>
+                            <p class="sys-stat__label">연간 API호출</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="sys-body">
+                <div class="sys-copy">
+                    <p class="sys-grad sys-grad--land"><span class="sr-only">대한민국 대표 공간정보 서비스를 안정적으로 운영합니다.</span></p>
+                    <p class="sys-copy__desc">국가가 구축·관리하는 다양한 공간정보를 통합 제공하는 국토정보플랫폼을<br>안정적으로 운영하며, 공간정보의 검색 · 조회 · 다운로드와 다양한 활용을 지원합니다.</p>
+                </div>
+
+                <section class="sys-block">
+                    <div class="sys-block__head">
+                        <h3 class="sys-block__title">국토정보플랫폼이 제공하는 주요 공간정보</h3>
+                        <p class="sys-block__sub">국토지리정보원이 구축·관리하는 다양한 국가 공간정보를 한 곳에서 검색, 조회, 다운로드 할 수 있습니다.</p>
+                    </div>
+                    <ul class="sys-maps">
+                        <li class="sys-map"><span class="sys-map__no">1</span><span class="sys-shot" style="width:11.9rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:668.18%;height:239.37%;left:0;top:-13.65%"></span><p class="sys-map__text">지형·도로·건물·시설물 등<br>국가 기본 공간정보 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">2</span><span class="sys-shot" style="width:13.2rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:601.36%;height:239.37%;left:-97.73%;top:-13.65%"></span><p class="sys-map__text">국토 항공사진 및 위치·기하<br>보정 정사영상 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">3</span><span class="sys-shot" style="width:12.3rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:645.37%;height:239.37%;left:-218.05%;top:-13.65%"></span><p class="sys-map__text">위성 촬영 국토영상 및<br>관련 활용자료 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">4</span><span class="sys-shot" style="width:10.4rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:764.74%;height:239.37%;left:-400%;top:-13.65%"></span><p class="sys-map__text">삼각점, 수준점, 통합기준점 등<br>정보와 GNSS 관측자료 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">5</span><span class="sys-shot" style="width:14.1rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:562.98%;height:239.37%;left:-371.06%;top:-13.65%"></span><p class="sys-map__text">자율주행 등에 활용되는<br>고정밀 도로정보 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">6</span><span class="sys-shot" style="width:9.9rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:796.99%;height:239.37%;left:-684.94%;top:-13.65%"></span><p class="sys-map__text">인구·사회·국토 통계정보의<br>공간 기반 조회·분석 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">7</span><span class="sys-shot" style="width:13.8rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:575.22%;height:239.37%;left:0;top:-125.4%"></span><p class="sys-map__text">고지도 및 과거 지리정보의<br>공간 연계 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">8</span><span class="sys-shot" style="width:9rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:882%;height:239.37%;left:-164%;top:-125.4%"></span><p class="sys-map__text">북한지역의 지형·지명 등<br>공간정보 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">9</span><span class="sys-shot" style="width:13.2rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:601.36%;height:239.37%;left:-198.18%;top:-125.4%"></span><p class="sys-map__text">전국 지명과 위치 및<br>관련 정보 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">10</span><span class="sys-shot" style="width:11.9rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:664.82%;height:239.37%;left:-340.7%;top:-125.4%"></span><p class="sys-map__text">개발·건설 등으로 변화한<br>국토의 현황을 공간정보로 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">11</span><span class="sys-shot" style="width:10.6rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:751.7%;height:239.37%;left:-518.75%;top:-125.4%"></span><p class="sys-map__text">공공·민간 활용을 위한<br>국가 공간정보 API 제공</p></li>
+                        <li class="sys-map"><span class="sys-map__no">12</span><span class="sys-shot" style="width:5.8rem"><img src="assets/images/business/sys-maps.png" alt="" style="width:1363.92%;height:239.37%;left:-1214.43%;top:-125.4%"></span><p class="sys-map__text">다양한 주제의 국가<br>공간정보 지속 확대·제공</p></li>
+                    </ul>
+                </section>
+
+                <section class="sys-block">
+                    <h3 class="sys-block__title">국토정보플랫폼 운영·관리 영역</h3>
+                    <ul class="sys-ops">
+                        <li class="sys-op">
+                            <span class="sys-op__no">1</span>
+                            <span class="sys-shot sys-shot--box"><span class="sys-shot__win" style="width:9.5rem;height:10rem"><img src="assets/images/business/sys-ops.png" alt="" style="width:458.23%;height:144.51%;left:-7.81%;top:-25.35%"></span></span>
+                            <h4 class="sys-op__name">국가 공간정보 통합 유통</h4>
+                            <p class="sys-op__lead">다양한 국가 공간정보를<br>표준화하여 통합 제공</p>
+                            <ul class="sys-op__list">
+                                <li>수치지도·항공사진·정사영상·국가기준점 등 주요 공간정보 제공</li>
+                                <li>공간정보 검색·조회·다운로드 지원</li>
+                            </ul>
+                        </li>
+                        <li class="sys-op">
+                            <span class="sys-op__no">2</span>
+                            <span class="sys-shot sys-shot--box"><span class="sys-shot__win" style="width:8.7rem;height:10rem"><img src="assets/images/business/sys-ops.png" alt="" style="width:497.03%;height:144.51%;left:-138.9%;top:-25.35%"></span></span>
+                            <h4 class="sys-op__name">지도·검색 API 운영</h4>
+                            <p class="sys-op__lead">공간정보의 다양한 활용을 위한<br>API 서비스 제공</p>
+                            <ul class="sys-op__list">
+                                <li>13종 배경지도 API 운영</li>
+                                <li>5종 검색 API 연계 운영</li>
+                                <li>공공·민간 서비스 활용 지원</li>
+                            </ul>
+                        </li>
+                        <li class="sys-op">
+                            <span class="sys-op__no">3</span>
+                            <span class="sys-shot sys-shot--box"><span class="sys-shot__win" style="width:9.5rem;height:10rem"><img src="assets/images/business/sys-ops.png" alt="" style="width:455.35%;height:144.51%;left:-228.51%;top:-25.35%"></span></span>
+                            <h4 class="sys-op__name">클라우드 기반 운영</h4>
+                            <p class="sys-op__lead">대규모 이용환경에 대응하는<br>안정적인 서비스 운영</p>
+                            <ul class="sys-op__list">
+                                <li>서버·스토리지 운영상태 모니터링</li>
+                                <li>시스템 성능 점검 및 최적화</li>
+                                <li>클라우드 자원 관리 및 운영 효율화</li>
+                            </ul>
+                        </li>
+                        <li class="sys-op">
+                            <span class="sys-op__no">4</span>
+                            <span class="sys-shot sys-shot--box"><span class="sys-shot__win" style="width:10.7rem;height:10rem"><img src="assets/images/business/sys-ops.png" alt="" style="width:405.98%;height:144.51%;left:-305.98%;top:-25.35%"></span></span>
+                            <h4 class="sys-op__name">품질관리 통합관제</h4>
+                            <p class="sys-op__lead">서비스 품질과 시스템 상태를<br>체계적으로 관리</p>
+                            <ul class="sys-op__list">
+                                <li>공간정보 데이터 품질 점검</li>
+                                <li>시스템 운영상태 통합 모니터링</li>
+                                <li>장애 예방 및 신속한 대응·복구</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer--inner">
+        <div class="gutter-xxl">
+            <h2 class="footer-logo"><span class="sr-only">LTMetric</span></h2>
+            <div class="footer--content">
+                <div class="addr">
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>서울 연구소 : 서울특별시 금천구 가산디지털1로 145</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:02-853-9557">02-853-9557</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:02-853-9556">02-853-9556</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>Address</span>
+                            <p>(전주) 전라북도 전주시 덕진구 견훤로 209, 2층</p>
+                        </div>
+                        <div class="flex">
+                            <span>Tel</span>
+                            <a href="tel:063-241-8835">063-241-8835</a>
+                        </div>
+                        <div class="flex">
+                            <span>Fax</span>
+                            <a href="tel:063-244-8835">063-244-8835</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <span>E-mail</span>
+                            <a href="mailto:contact@ltmetric.com">contact@ltmetric.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <button class="dropdownButton" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu1">
+                        <span>Family Site</span>
+                        <span class="material-symbols-outlined arw">keyboard_arrow_down</span>
+                    </button>
+                    <div id="dropdownMenu1" class="dropdown-content" role="menu">
+                        <a href="https://gisalliance.co.kr/" role="menuitem" tabindex="-1" target="_blank">Alliance</a>
+                        <a href="https://neospectra.co.kr/" role="menuitem" tabindex="-1" target="_blank">네오스펙트라</a>
+                        <a href="https://all4land.com/" role="menuitem" tabindex="-1" target="_blank">올포랜드</a>
+                        <a href="http://mhgis.co.kr/" role="menuitem" tabindex="-1" target="_blank">명화지리정보</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--copy">
+                <div class="copyright">&copy; LTMETRIC. All rights reserved.</div>
+                <div class="links">
+                    <a href="#" target="_blank" title=""><span class="sr-only">그룹웨어</span></a>
+                    <a href="https://youtube.com/channel/UCSu15Bpzz4oWRWCqX166IIg?si=vCb4TkWVgu2O5CDW" target="_blank" title=""><span class="sr-only">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
     <button type="button" id="btnTop" title="맨 위로"><i></i></button>
     <script src="./js/modal.js"></script>
