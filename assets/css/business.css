@@ -1507,18 +1507,12 @@
 .cad-under__shot {
   overflow: hidden;
   border-radius: 1.6rem;
-  aspect-ratio: 780 / 443;
-}
-
-.cad-under__shot--side {
-  aspect-ratio: 612 / 443;
 }
 
 .cad-under__shot img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .cad-under__cap {
@@ -1600,11 +1594,6 @@
 
   .cad-flow li {
     flex: 1 1 18rem;
-  }
-
-  .cad-under__shot,
-  .cad-under__shot--side {
-    aspect-ratio: 16 / 9;
   }
 }
 
