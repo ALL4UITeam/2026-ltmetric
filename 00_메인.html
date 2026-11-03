@@ -204,6 +204,131 @@
   <!-- main -->
   <main>
     <!-- HERO -->
+    <section class="hero" aria-label="메인 비주얼">
+      <div class="hero__bg">
+        <video class="hero__video" autoplay muted loop playsinline>
+          <source src="./assets/video/visual_mainmv.mp4" type="video/mp4">
+        </video>
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__copy">
+          <h1 class="hero__title">
+            <span class="hero__line"><span>Always create our customer’s</span></span>
+            <span class="hero__line"><span>best value</span></span>
+          </h1>
+          <p class="hero__desc">
+            <span class="hero__line"><span>공간을 잇는 엘티메트릭<br>정밀한 측량, 가치 있는 데이터</span></span>
+          </p>
+        </div>
+        <div class="hero__timeline" aria-hidden="true">
+          <span class="hero__timeline-bar"></span>
+        </div>
+        <a class="hero__down" href="#bizSlide">
+          <img src="./assets/images/main/hero-down.svg" alt="아래로 이동" width="70" height="70">
+        </a>
+      </div>
+    </section>
+
+    <section class="biz-slide" id="bizSlide" aria-roledescription="carousel" aria-label="사업분야">
+      <div class="biz-slide__head">
+        <h2 class="biz-slide__title">사업분야</h2>
+        <p class="biz-slide__summary">지적측량·항공측량·시스템 통합·LT VISION까지<br>측량에서 데이터, 플랫폼까지 이어지는 LTMetric의 공간정보 사업영역입니다.</p>
+      </div>
+
+      <div class="biz-dial">
+        <svg class="biz-dial__ring" viewBox="0 0 170 170" width="170" height="170" aria-hidden="true">
+          <defs>
+            <path id="bizDialPath" d="M85,85 m-68,0 a68,68 0 1,1 136,0 a68,68 0 1,1 -136,0"></path>
+          </defs>
+          <text fill="#0A31A8" font-size="15" font-family="Pretendard, sans-serif" font-weight="500" letter-spacing="4.5">
+            <textPath href="#bizDialPath">BUSINESS · LTMETRIC · BUSINESS · LTMETRIC · BUSINESS · LTMETRIC ·</textPath>
+          </text>
+        </svg>
+        <div class="biz-dial__arrows">
+          <img src="./assets/images/main/biz-dial-arrow.svg" alt="" width="46" height="15">
+          <button type="button" class="biz-dial__btn biz-dial__btn--prev" aria-label="이전 사업분야"></button>
+          <button type="button" class="biz-dial__btn biz-dial__btn--next" aria-label="다음 사업분야"></button>
+        </div>
+      </div>
+
+      <div class="biz-slide__viewport">
+        <div class="biz-slide__track">
+          <a class="biz-slide__card" href="02_사업분야_01_국토공간정보.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-01.png" alt="" style="object-position:68% 48%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">국토 공간정보</strong>
+              <span class="biz-slide__copy">지상에서 우주까지, 공간을 데이터로 만드는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_02_해양공간정보.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-02.png" alt="" style="object-position:50% 50%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">해양 공간정보</strong>
+              <span class="biz-slide__copy">해안선에서 해저까지, 바다를 데이터로 잇는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_03_공간정보통합센싱.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-03.png" alt="" style="object-position:55% 50%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">공간정보 통합센싱</strong>
+              <span class="biz-slide__copy">하늘에서 바다까지, 다양한 플랫폼으로 공간을 정밀하게 관측하는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_04_디지털트윈.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-04.png" alt="" style="object-position:50% 42%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">디지털트윈</strong>
+              <span class="biz-slide__copy">3D 공간정보와 데이터를 연결해, 공간 분석과 의사결정을 지원하는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_05_지적측량.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-05.png" alt="" style="object-position:32% 58%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">지적측량</strong>
+              <span class="biz-slide__copy">토지의 경계를 바로잡고, 지하의 공간정보를 정밀하게 구축하는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_06_지능형영상관제.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-06.png" alt="" style="object-position:50% 42%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">지능형 영상관제</strong>
+              <span class="biz-slide__copy">3D 공간정보와 AI 영상분석으로 도시의 안전을 실시간 관리하는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_07_AICITY.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-07.png" alt="" style="object-position:42% 50%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">AI CITY</strong>
+              <span class="biz-slide__copy">도시 데이터를 연결하고, AI로 도시의 미래를 설계하는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+          <a class="biz-slide__card" href="02_사업분야_08_시스템운영관리.html">
+            <span class="biz-slide__media"><img src="./assets/images/main/biz-08.png" alt="" style="object-position:28% 50%"></span>
+            <span class="biz-slide__shade"></span>
+            <span class="biz-slide__body">
+              <strong class="biz-slide__name">시스템 운영·관리</strong>
+              <span class="biz-slide__copy">안정적인 시스템 운영과 지속적인 서비스 가치를 만드는 기술</span>
+            </span>
+            <span class="biz-slide__more"><img src="./assets/images/main/biz-arrow.svg" alt="" width="30" height="30"></span>
+          </a>
+        </div>
+      </div>
+    </section>
     
 
 
