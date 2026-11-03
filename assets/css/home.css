@@ -161,11 +161,7 @@
   color: #fff;
 }
 .hero__timeline {
-  position: relative;
-  height: 2px;
-  margin-top: 60px;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0;
+  display: none;
 }
 .hero__timeline-bar {
   position: absolute;
@@ -191,8 +187,8 @@
 
 @media (max-width: 1200px) {
   .hero {
-    height: 100svh;
-    min-height: 640px;
+    height: 100vh;
+    height: 100dvh;
   }
   .hero__content {
     top: auto;
@@ -204,9 +200,6 @@
   }
   .hero__desc {
     font-size: clamp(16px, 2.2vw, 22px);
-  }
-  .hero__timeline {
-    margin-top: 36px;
   }
   .hero__down {
     top: auto;
@@ -236,14 +229,11 @@
   .hero__desc br {
     display: none;
   }
-  .hero__timeline {
-    margin-top: 24px;
-  }
   .hero__down {
     display: none;
   }
   .biz-slide__viewport {
-    height: 420px;
+    height: auto;
   }
   .biz-slide__card:not(.is-active) .biz-slide__body {
     opacity: 0;
@@ -252,8 +242,13 @@
 
 .biz-slide {
   position: relative;
-  padding: 100px 0 110px;
-  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+  height: 100dvh;
+  padding: 128px 0 48px;
+  overflow: hidden;
   max-width: 100%;
   background: #fff;
   overflow-anchor: none;
@@ -278,9 +273,11 @@
 }
 .biz-slide__viewport {
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
-  height: 530px;
-  margin-top: 80px;
+  height: auto;
+  min-height: 0;
+  margin-top: 40px;
   overflow: hidden;
   max-width: 100%;
   cursor: grab;
@@ -289,6 +286,10 @@
 }
 .biz-slide__viewport.is-dragging {
   cursor: grabbing;
+}
+.biz-slide__viewport img {
+  -webkit-user-drag: none;
+  user-select: none;
 }
 .biz-slide__track {
   display: flex;
@@ -307,6 +308,8 @@
   border-radius: 16px;
   background: #f6f6f6;
   color: #fff;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 .biz-slide__media,
 .biz-slide__shade {
@@ -407,7 +410,7 @@
 }
 .biz-dial {
   position: absolute;
-  top: 198px;
+  top: 226px;
   right: max(16px, calc((100% - 1920px) / 2 + 215px));
   z-index: 2;
   width: 170px;
@@ -415,6 +418,8 @@
 }
 .biz-dial__ring {
   display: block;
+  width: 100%;
+  height: 100%;
   transform-origin: 50% 50%;
   animation: biz-dial-spin 28s linear infinite;
 }
@@ -450,7 +455,7 @@
 
 @media (max-width: 1100px) {
   .biz-slide {
-    padding: 72px 0 80px;
+    padding: 96px 0 28px;
   }
   .biz-slide__head {
     width: min(1440px, calc(100% - 40px));
@@ -465,14 +470,16 @@
     display: none;
   }
   .biz-dial {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 28px auto 0;
+    position: absolute;
+    top: 96px;
+    right: 16px;
+    width: 112px;
+    height: 112px;
+    margin: 0;
   }
   .biz-slide__viewport {
-    height: 440px;
-    margin-top: 36px;
+    height: auto;
+    margin-top: 24px;
   }
   .biz-slide__card.is-settled .biz-slide__name {
     font-size: 28px;
@@ -493,6 +500,14 @@
   }
 }
 @media (max-width: 767px) {
+  .biz-slide {
+    padding: 84px 0 20px;
+  }
+  .biz-dial {
+    top: 78px;
+    width: 84px;
+    height: 84px;
+  }
   .biz-slide__name,
   .biz-slide__card.is-settled .biz-slide__name {
     font-size: 22px;
