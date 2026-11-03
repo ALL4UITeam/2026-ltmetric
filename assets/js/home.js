@@ -2,22 +2,6 @@
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
   gsap.registerPlugin(ScrollTrigger);
-  if (typeof ScrollToPlugin !== 'undefined') gsap.registerPlugin(ScrollToPlugin);
-
-  var sectionAnimating = false;
-
-  function animateToSection(target, duration, ease) {
-    sectionAnimating = true;
-    return gsap.to(window, {
-      duration: duration,
-      scrollTo: { y: target, autoKill: false },
-      ease: ease || 'power3.out',
-      overwrite: 'auto',
-      onComplete: function () {
-        sectionAnimating = false;
-      },
-    });
-  }
 
   function initHeroAnimation() {
     var hero = document.querySelector('.hero');
@@ -28,16 +12,15 @@
 
     if (!hero || !lines.length) return;
 
-    gsap.set(lines, { y: '110%', opacity: 0 });
+    revealHeroTitle(hero);
     if (down) gsap.set(down, { opacity: 0, y: 16 });
     if (timeline) gsap.set(timeline, { opacity: 0 });
     initHeroTimeline(hero);
 
     var tl = gsap.timeline({
-      delay: reduceMotion ? 0 : 0.2,
+      paused: true,
       onComplete: function () {
         hero.classList.add('is-revealed');
-        gsap.set(lines, { y: 0, opacity: 1 });
         if (timeline) gsap.set(timeline, { opacity: 1 });
         if (down) {
           gsap.to(down, {
@@ -50,14 +33,6 @@
         }
       },
     });
-
-    tl.to(lines, {
-      y: '0%',
-      opacity: 1,
-      duration: reduceMotion ? 0.01 : 1.05,
-      stagger: reduceMotion ? 0 : 0.16,
-      ease: 'power4.out',
-    }, 0.35);
 
     if (timeline) {
       tl.to(timeline, {
@@ -74,11 +49,57 @@
         duration: 0.7,
         ease: 'power3.out',
       }, 0.85);
+    }
 
-      down.addEventListener('click', function (event) {
-        event.preventDefault();
-        animateToSection('#bizSlide', 0.45);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        if (!reduceMotion) tl.delay(0.2);
+        tl.play(0);
       });
+    });
+  }
+
+  function revealHeroTitle(hero) {
+    if (hero.dataset.titleReady === '1') return;
+
+    var start = function () {
+      if (hero.dataset.titleReady === '1') return;
+      hero.dataset.titleReady = '1';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          hero.classList.add('is-in');
+          void hero.offsetWidth;
+          hero.querySelectorAll('.hero__line > span').forEach(function (line) {
+            line.getAnimations().forEach(function (anim) {
+              anim.pause();
+              anim.currentTime = 0;
+            });
+          });
+          requestAnimationFrame(function () {
+            hero.querySelectorAll('.hero__line > span').forEach(function (line) {
+              line.getAnimations().forEach(function (anim) {
+                anim.play();
+              });
+            });
+          });
+        });
+      });
+    };
+
+    var go = function () {
+      var fontReady = document.fonts && document.fonts.load
+        ? document.fonts.load('700 60px "Play Local"').catch(function () {})
+        : Promise.resolve();
+      var limit = new Promise(function (resolve) {
+        window.setTimeout(resolve, 800);
+      });
+      Promise.race([fontReady, limit]).then(start);
+    };
+
+    if (document.readyState === 'complete') go();
+    else {
+      window.addEventListener('load', go, { once: true });
+      window.setTimeout(go, 3000);
     }
   }
 
@@ -107,15 +128,13 @@
     var viewport = root.querySelector('.biz-slide__viewport');
     var track = root.querySelector('.biz-slide__track');
     var cards = Array.prototype.slice.call(root.querySelectorAll('.biz-slide__card'));
-    var prev = root.querySelector('.biz-dial__btn--prev');
-    var next = root.querySelector('.biz-dial__btn--next');
+    var prev = root.querySelector('.biz-slide__nav--prev');
+    var next = root.querySelector('.biz-slide__nav--next');
     var busy = false;
     var tween = null;
-    var drag = null;
     var timer = null;
     var hoverPaused = false;
     var hiddenPaused = false;
-    var dragPaused = false;
     var autoDelay = 5000;
 
     if (!viewport || !track || !cards.length) return;
@@ -182,7 +201,7 @@
 
     function queue() {
       clearTimeout(timer);
-      if (hoverPaused || hiddenPaused || busy || dragPaused) return;
+      if (hoverPaused || hiddenPaused || busy) return;
       timer = setTimeout(function () {
         slideBy(1);
       }, autoDelay);
@@ -196,6 +215,8 @@
       var targetX = layoutX(cards, activeEl, widths, size.gap);
       var duration = animate ? (options.duration || 1) : 0;
       var ease = options.ease || 'power2.inOut';
+      var navHalf = (prev || next) ? (prev || next).offsetWidth / 2 : 24;
+      var navEdge = (viewport.clientWidth - size.activeW) / 2 - navHalf;
       track.style.gap = size.gap + 'px';
 
       root.classList.add('is-moving');
@@ -214,6 +235,8 @@
           });
         });
         gsap.set(track, { x: targetX });
+        if (prev) gsap.set(prev, { left: navEdge });
+        if (next) gsap.set(next, { right: navEdge });
         if (activeEl) activeEl.classList.add('is-settled');
         window.requestAnimationFrame(function () {
           root.classList.remove('is-moving');
@@ -248,6 +271,12 @@
         duration: duration,
         ease: ease,
       }, 0);
+      if (prev) {
+        tween.to(prev, { left: navEdge, duration: duration, ease: ease }, 0);
+      }
+      if (next) {
+        tween.to(next, { right: navEdge, duration: duration, ease: ease }, 0);
+      }
     }
 
     function normalize(activeEl) {
@@ -293,118 +322,13 @@
     if (prev) prev.addEventListener('click', function () { slideBy(-1); });
     if (next) next.addEventListener('click', function () { slideBy(1); });
 
-    var blockClick = false;
-
-    root.querySelectorAll('a, img').forEach(function (el) {
-      el.setAttribute('draggable', 'false');
-      el.addEventListener('dragstart', function (event) {
-        event.preventDefault();
-      });
-    });
-
     cards.forEach(function (card) {
       card.addEventListener('click', function (event) {
-        if (blockClick || (drag && drag.moved)) {
-          event.preventDefault();
-          blockClick = false;
-          return;
-        }
         if (card.classList.contains('is-active')) return;
         event.preventDefault();
         slideTo(card);
       });
     });
-
-    viewport.addEventListener('pointerdown', function (event) {
-      if (busy) return;
-      if (event.pointerType === 'mouse' && event.button !== 0) return;
-      clearTimeout(timer);
-      dragPaused = true;
-      drag = {
-        id: event.pointerId,
-        x: event.clientX,
-        y: event.clientY,
-        dx: 0,
-        lock: null,
-        moved: false,
-        originX: parseFloat(gsap.getProperty(track, 'x')) || 0,
-        lastX: event.clientX,
-        lastT: window.performance.now(),
-        velocity: 0,
-      };
-    });
-
-    viewport.addEventListener('pointermove', function (event) {
-      if (!drag || drag.id !== event.pointerId) return;
-      var dx = event.clientX - drag.x;
-      var dy = event.clientY - drag.y;
-      if (!drag.lock && Math.hypot(dx, dy) > 8) {
-        drag.lock = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
-        if (drag.lock === 'x') {
-          viewport.classList.add('is-dragging');
-          root.classList.add('is-moving');
-          if (viewport.setPointerCapture) {
-            try { viewport.setPointerCapture(event.pointerId); } catch (err) {}
-          }
-        }
-      }
-      if (drag.lock !== 'x') return;
-      var now = window.performance.now();
-      drag.velocity = (event.clientX - drag.lastX) / Math.max(1, now - drag.lastT);
-      drag.lastX = event.clientX;
-      drag.lastT = now;
-      drag.dx = dx;
-      drag.moved = Math.abs(dx) > 12;
-      gsap.set(track, { x: drag.originX + dx });
-      event.preventDefault();
-    });
-
-    function endDrag(event) {
-      if (!drag || (event && drag.id !== event.pointerId)) return;
-      var dx = drag.dx;
-      var originX = drag.originX;
-      var velocity = drag.velocity;
-      var horizontal = drag.lock === 'x';
-      viewport.classList.remove('is-dragging');
-      if (event && viewport.releasePointerCapture) {
-        try { viewport.releasePointerCapture(event.pointerId); } catch (err) {}
-      }
-      if (horizontal && Math.abs(dx) > 12) blockClick = true;
-      window.setTimeout(function () {
-        if (drag) drag.moved = false;
-        drag = null;
-      }, 40);
-      dragPaused = false;
-
-      if (!horizontal) return;
-
-      var size = metrics();
-      var step = Math.abs(size.activeW - size.smallW) * 0.55 + size.gap;
-      var dir = 0;
-      if (velocity < -0.45) dir = 1;
-      else if (velocity > 0.45) dir = -1;
-      else if (dx < -step * 0.2) dir = 1;
-      else if (dx > step * 0.2) dir = -1;
-
-      if (dir) {
-        slideBy(dir, { duration: 0.6, ease: 'power2.out' });
-        return;
-      }
-
-      gsap.to(track, {
-        x: originX,
-        duration: 0.45,
-        ease: 'power3.out',
-        overwrite: 'auto',
-        onComplete: function () {
-          root.classList.remove('is-moving');
-          queue();
-        },
-      });
-    }
-
-    viewport.addEventListener('pointerup', endDrag);
-    viewport.addEventListener('pointercancel', endDrag);
 
     viewport.addEventListener('mouseenter', function () {
       hoverPaused = true;
@@ -670,86 +594,11 @@
     };
   }
 
-  function initSectionSnap() {
-    var hero = document.querySelector('.hero');
-    var biz = document.querySelector('.biz-slide');
-    var about = document.querySelector('#mainAbout');
-    if (!hero || !biz || !about) return;
-
-    var timer = null;
-    var origin = window.scrollY || window.pageYOffset || 0;
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function settle() {
-      if (sectionAnimating) return;
-
-      var y = window.scrollY || window.pageYOffset || 0;
-      var from = origin;
-      var aboutTop = about.offsetTop;
-      var list = [hero.offsetTop, biz.offsetTop, aboutTop];
-
-      if (y > aboutTop + 40) {
-        origin = y;
-        return;
-      }
-
-      var goingDown = y >= from;
-      var target = goingDown ? list[list.length - 1] : list[0];
-      var index;
-
-      if (goingDown) {
-        for (index = 0; index < list.length; index += 1) {
-          if (y < list[index] - 8) {
-            var prev = list[Math.max(0, index - 1)];
-            var span = Math.max(1, list[index] - prev);
-            target = (y - prev) > span * 0.18 ? list[index] : prev;
-            break;
-          }
-          target = list[index];
-        }
-      } else {
-        for (index = list.length - 1; index >= 0; index -= 1) {
-          if (y > list[index] + 8) {
-            var next = list[Math.min(list.length - 1, index + 1)];
-            var spanUp = Math.max(1, next - list[index]);
-            target = (next - y) > spanUp * 0.18 ? list[index] : next;
-            break;
-          }
-          target = list[index];
-        }
-      }
-
-      origin = target;
-      if (Math.abs(y - target) < 8) return;
-      var toBiz = target === biz.offsetTop && from < biz.offsetTop;
-      animateToSection(target, reduceMotion ? 0.01 : (toBiz ? 0.45 : 0.7));
-    }
-
-    window.addEventListener('scroll', function () {
-      if (sectionAnimating) return;
-      var y = window.scrollY || window.pageYOffset || 0;
-      var bizTop = biz.offsetTop;
-      if (origin < bizTop - 8 && y > hero.offsetHeight * 0.18 && y < bizTop - 8) {
-        window.clearTimeout(timer);
-        timer = null;
-        origin = bizTop;
-        animateToSection(bizTop, reduceMotion ? 0.01 : 0.45);
-        return;
-      }
-      window.clearTimeout(timer);
-      timer = window.setTimeout(function () {
-        timer = null;
-        settle();
-      }, 160);
-    }, { passive: true });
-  }
-
   function initHomeScroll() {
     initHeroAnimation();
     initBizSlide();
     initCarbonScroll();
     initSection04();
-    initSectionSnap();
     ScrollTrigger.refresh();
   }
 

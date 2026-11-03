@@ -306,6 +306,7 @@ var smoothscroll = {
     return supportsPassive;
   },
   init: function init() {
+    if (document.querySelector("#bizSlide")) return;
     var userAgent = navigator.userAgent.toLowerCase();
     var isMobile = /iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
     var isMac = /macintosh|mac os x/i.test(userAgent);
@@ -363,19 +364,19 @@ var init2 = function init3() {
   breadCrumbDrop();
   headers();
   updateMobileMenu();
-  document.getElementById("btnTop").addEventListener("click", function() {
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: {
-        y: 0,
-        autoKill: true
-      }
+  var topButton = document.getElementById("btnTop");
+  if (topButton) {
+    topButton.addEventListener("click", function() {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+          y: 0,
+          autoKill: true
+        }
+      });
     });
-  });
-  btnMobile.addEventListener("click", handleMobileButtonClick);
-  mobileMenus.forEach(function(menu) {
-    menu.addEventListener("click", handleMobileMenuClick);
-  });
+  }
+  if (btnMobile) btnMobile.addEventListener("click", handleMobileButtonClick);
   gnbItems.forEach(function(item) {
     item.addEventListener("mouseover", handleGnbItemMouseOver);
     item.addEventListener("mouseout", handleGnbItemMouseOut);

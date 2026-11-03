@@ -103,7 +103,7 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: #061428 url('../images/main-hero-bg.png') center / cover no-repeat;
+  background: #061428;
   overflow: hidden;
 }
 .hero__video {
@@ -113,6 +113,7 @@
   max-width: none;
   object-fit: cover;
   object-position: center;
+  background: #061428;
   pointer-events: none;
 }
 .hero__overlay {
@@ -140,13 +141,41 @@
   overflow: hidden;
   padding-bottom: 0.06em;
 }
+@font-face {
+  font-family: "Play Local";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("../fonts/Play-700.woff2") format("woff2");
+}
 .hero__line > span {
   display: block;
-  will-change: transform, opacity;
+  transform: translateY(110%);
+  opacity: 0;
+}
+.hero.is-in .hero__line > span {
+  animation: hero-line-in 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.12s;
+}
+.hero.is-in .hero__title .hero__line:nth-child(2) > span {
+  animation-delay: 0.28s;
+}
+.hero.is-in .hero__desc .hero__line > span {
+  animation-delay: 0.44s;
+}
+@keyframes hero-line-in {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .hero__title {
   margin: 0;
-  font-family: "Play", sans-serif;
+  font-family: "Play Local", "Play", sans-serif;
   font-size: 60px;
   font-weight: 700;
   line-height: 1.15;
@@ -232,8 +261,8 @@
   .hero__down {
     display: none;
   }
-  .biz-slide__viewport {
-    height: auto;
+  .biz-slide__stage {
+    margin-top: 16px;
   }
   .biz-slide__card:not(.is-active) .biz-slide__body {
     opacity: 0;
@@ -271,21 +300,52 @@
   line-height: 1.5;
   color: #666;
 }
+.biz-slide__stage {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-height: 0;
+  margin-top: 40px;
+}
 .biz-slide__viewport {
   display: flex;
   flex: 1 1 auto;
   align-items: center;
-  height: auto;
+  height: 100%;
   min-height: 0;
-  margin-top: 40px;
   overflow: hidden;
   max-width: 100%;
-  cursor: grab;
-  touch-action: pan-y;
   overflow-anchor: none;
 }
-.biz-slide__viewport.is-dragging {
-  cursor: grabbing;
+.biz-slide__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(10, 20, 40, 0.16);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.biz-slide__nav--prev {
+  left: 16px;
+}
+.biz-slide__nav--next {
+  right: 16px;
+}
+.biz-slide__nav svg {
+  display: block;
+  width: 13px;
+  height: 15px;
 }
 .biz-slide__viewport img {
   -webkit-user-drag: none;
@@ -430,23 +490,11 @@
   width: 46px;
   height: 15px;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 .biz-dial__arrows img {
   display: block;
   max-width: none;
-}
-.biz-dial__btn {
-  position: absolute;
-  top: -12px;
-  width: 28px;
-  height: 40px;
-  padding: 0;
-}
-.biz-dial__btn--prev {
-  left: -8px;
-}
-.biz-dial__btn--next {
-  right: -8px;
 }
 @keyframes biz-dial-spin {
   from { transform: rotate(-8deg); }
@@ -477,8 +525,7 @@
     height: 112px;
     margin: 0;
   }
-  .biz-slide__viewport {
-    height: auto;
+  .biz-slide__stage {
     margin-top: 24px;
   }
   .biz-slide__card.is-settled .biz-slide__name {
@@ -515,8 +562,13 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .biz-dial__ring {
+  .biz-dial__ring,
+  .hero__line > span {
     animation: none;
+  }
+  .hero__line > span {
+    transform: none;
+    opacity: 1;
   }
 }
 
