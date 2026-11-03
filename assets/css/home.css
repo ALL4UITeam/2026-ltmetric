@@ -94,7 +94,9 @@
 
 .hero {
   position: relative;
-  height: 930px;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   color: #fff;
 }
@@ -123,7 +125,7 @@
   position: absolute;
   z-index: 1;
   left: 50%;
-  top: 524px;
+  bottom: clamp(56px, 10vh, 110px);
   width: min(1440px, calc(100% - 80px));
   transform: translateX(-50%);
   color: #fff;
@@ -749,8 +751,7 @@
 
 #mainAbout {
   position: relative;
-  overflow: hidden;
-  height: 450vh;
+  height: 360vh;
   background-color: #f1f6f9;
 }
 
@@ -1005,4 +1006,5 @@
   height: 100vh;
   width: 100% !important;
   max-width: 100% !important;
+  overflow: hidden;
 }

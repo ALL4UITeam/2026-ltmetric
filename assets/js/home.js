@@ -532,8 +532,8 @@
 
     if (!section || !pinTarget) return;
 
-    gsap.set('#mainAbout .end-move-thumb', { y: '50%', opacity: 0 });
-    gsap.set('#mainAbout .end-titles-inner', { y: '30%', opacity: 0 });
+    gsap.set('#mainAbout .end-move-thumb', { y: 36, opacity: 0 });
+    gsap.set('#mainAbout .end-titles-inner', { y: 20, opacity: 0 });
 
     var tl = gsap.timeline({
       scrollTrigger: {
@@ -541,33 +541,36 @@
         trigger: section,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 0.5,
+        scrub: 0.35,
         pin: pinTarget,
-        anticipatePin: 1,
+        anticipatePin: 0,
         invalidateOnRefresh: true,
       },
     });
 
-    tl.addLabel('time01')
-      .to('#mainAbout .end-move-thumb--01', { y: 0, opacity: 1, duration: 1, delay: 0.5 }, 'time01')
-      .to('#mainAbout .end-move-thumb--02', { y: 0, opacity: 1, duration: 1, delay: 1 }, 'time01')
-      .to('#mainAbout .end-move-thumb--03', { y: 0, opacity: 1, duration: 1, delay: 1.5 }, 'time01')
-
-      .addLabel('time02')
-      .to('#mainAbout .end-move-thumb--01', { y: '-50%', opacity: 0, duration: 1, delay: 0.5 }, 'time02')
-      .to('#mainAbout .end-move-thumb--02', { y: '-50%', opacity: 0, duration: 1, delay: 1 }, 'time02')
-      .to('#mainAbout .end-move-thumb--03', { y: '-50%', opacity: 0, duration: 1, delay: 1.5 }, 'time02')
-
-      .addLabel('time03')
-      .to('#mainAbout .tit_wraps', { opacity: 0, y: '-100%', height: '0%', duration: 1 }, 'time03')
+    tl.to('#mainAbout .end-move-thumb--01', { y: 0, opacity: 1, duration: 0.7, ease: 'none' }, 0.05)
+      .to('#mainAbout .end-move-thumb--02', { y: 0, opacity: 1, duration: 0.7, ease: 'none' }, 0.22)
+      .to('#mainAbout .end-move-thumb--03', { y: 0, opacity: 1, duration: 0.7, ease: 'none' }, 0.39)
+      .to('#mainAbout .end-move-thumb--01', { y: -28, opacity: 0, duration: 0.55, ease: 'none' }, 1.85)
+      .to('#mainAbout .end-move-thumb--02', { y: -28, opacity: 0, duration: 0.55, ease: 'none' }, 2.02)
+      .to('#mainAbout .end-move-thumb--03', { y: -28, opacity: 0, duration: 0.55, ease: 'none' }, 2.19)
+      .to('#mainAbout .tit_wraps', { opacity: 0, y: -24, duration: 0.85, ease: 'none' }, 2.75)
+      .to('#mainAbout .end-thumbs-wrapper', {
+        height: function () {
+          var inner = section.querySelector('.about-inner');
+          return inner ? inner.offsetHeight : window.innerHeight;
+        },
+        duration: 1.2,
+        ease: 'none',
+      }, 2.75)
       .to('#mainAbout .end-thumbs-wrapper .wraps', {
         maxWidth: '100%',
-        duration: 1,
         borderTopRightRadius: 0,
         borderTopLeftRadius: 0,
-      }, 'time03')
-      .to('#mainAbout .end-thumbs-wrapper', { height: '100vh', duration: 1 }, 'time03')
-      .to('#mainAbout .end-titles-inner', { y: '0%', opacity: 1, duration: 1, delay: 0.4 }, 'time03');
+        duration: 1.2,
+        ease: 'none',
+      }, 2.75)
+      .to('#mainAbout .end-titles-inner', { y: 0, opacity: 1, duration: 0.7, ease: 'none' }, 3.35);
 
     return function () {
       if (tl.scrollTrigger) tl.scrollTrigger.kill();
