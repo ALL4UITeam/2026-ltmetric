@@ -436,11 +436,13 @@ body {
   .header {
     height: auto;
     z-index: 1001;
+    transform: translateY(0);
     transition: transform 0.35s ease;
   }
   .header.hide {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
+    transform: translateY(-100%);
   }
   .header .container-xxl {
     padding-left: 1.7rem;

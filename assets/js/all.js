@@ -195,38 +195,25 @@ function headers() {
   function updateScrollDirection() {
     var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
     var delta = currentScrollY - lastScrollY;
-    var narrow = window.matchMedia("(max-width: 1440px)").matches;
-    if (narrow && currentScrollY > 80 && Math.abs(delta) < 12) return;
-    var isScrollingDown = delta > 0;
-    if (header2.classList.contains("_sub") && breadcrumb) {
-      if (currentScrollY >= breadcrumbTop) {
-        if (isScrollingDown) {
-          header2.classList.add("hide");
-          header2.classList.remove("up");
-        } else {
-          header2.classList.remove("hide");
-          if (currentScrollY > 0) {
-            header2.classList.add("up");
-          } else {
-            header2.classList.remove("up");
-          }
-        }
-      } else {
-        header2.classList.remove("hide", "up");
-      }
-    } else {
-      if (isScrollingDown) {
-        header2.classList.add("hide");
-        header2.classList.remove("up");
-      } else {
-        header2.classList.remove("hide");
-        if (currentScrollY > 0) {
-          header2.classList.add("up");
-        } else {
-          header2.classList.remove("up");
-        }
-      }
+    var nearTop = currentScrollY <= Math.max(breadcrumbTop, 10);
+
+    if (nearTop) {
+      header2.classList.remove("hide", "up");
+      lastScrollY = currentScrollY;
+      return;
     }
+
+    if (delta < 0) {
+      header2.classList.remove("hide");
+      header2.classList.add("up");
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (delta < 12) return;
+
+    header2.classList.add("hide");
+    header2.classList.remove("up");
     lastScrollY = currentScrollY;
   }
   document.addEventListener("DOMContentLoaded", function() {
