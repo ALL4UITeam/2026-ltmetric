@@ -580,18 +580,6 @@
         ease: 'none',
       }, 2.75)
       .to('#mainAbout .end-titles-inner', { y: 0, opacity: 1, duration: 0.7, ease: 'none' }, 3.35);
-
-    return function () {
-      if (tl.scrollTrigger) tl.scrollTrigger.kill();
-      tl.kill();
-      gsap.set([
-        '#mainAbout .end-move-thumb',
-        '#mainAbout .end-titles-inner',
-        '#mainAbout .tit_wraps',
-        '#mainAbout .end-thumbs-wrapper',
-        '#mainAbout .end-thumbs-wrapper .wraps',
-      ], { clearProps: 'all' });
-    };
   }
 
   function initHomeScroll() {

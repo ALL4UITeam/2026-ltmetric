@@ -1,11 +1,11 @@
 window.addEventListener("load", () => {
+  if (window.matchMedia("(max-width: 1023px), (pointer: coarse)").matches) return;
   setTimeout(() => {
     const target = document.querySelector(".intro--depth");
     if (target) {
       target.scrollIntoView({
         behavior: "smooth",
         block: "start"
-        // 요소의 시작 부분이 화면 맨 위에 오도록
       });
     }
   }, 2e3);

@@ -53,6 +53,19 @@ function copyRuntimeFiles() {
   }
 }
 
+const imageExts = new Set(['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.avif', '.ico'])
+const fontExts = new Set(['.woff', '.woff2', '.ttf', '.otf', '.eot'])
+const videoExts = new Set(['.mp4', '.webm'])
+
+function assetFolder(fileName) {
+  const ext = path.extname(fileName).toLowerCase()
+  if (ext === '.css') return 'assets/style/[name][extname]'
+  if (imageExts.has(ext)) return 'assets/images/[name][extname]'
+  if (videoExts.has(ext)) return 'assets/video/[name][extname]'
+  if (fontExts.has(ext)) return 'assets/style/[name][extname]'
+  return 'assets/[name][extname]'
+}
+
 export default defineConfig({
   plugins: [copyRuntimeFiles()],
   base: './',
@@ -70,6 +83,14 @@ export default defineConfig({
     assetsInlineLimit: 0,
     rollupOptions: {
       input: htmlInputs(),
+      output: {
+        entryFileNames: 'assets/js/[name].js',
+        chunkFileNames: 'assets/js/[name].js',
+        assetFileNames(assetInfo) {
+          const fileName = assetInfo.names?.[0] || assetInfo.name || 'asset'
+          return assetFolder(fileName)
+        },
+      },
     },
   },
 })

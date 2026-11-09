@@ -194,7 +194,10 @@ function headers() {
   var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
   function updateScrollDirection() {
     var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-    var isScrollingDown = currentScrollY > lastScrollY;
+    var delta = currentScrollY - lastScrollY;
+    var narrow = window.matchMedia("(max-width: 1440px)").matches;
+    if (narrow && currentScrollY > 80 && Math.abs(delta) < 12) return;
+    var isScrollingDown = delta > 0;
     if (header2.classList.contains("_sub") && breadcrumb) {
       if (currentScrollY >= breadcrumbTop) {
         if (isScrollingDown) {
@@ -307,18 +310,28 @@ var smoothscroll = {
   },
   init: function init() {
     if (document.querySelector("#bizSlide")) return;
-    var userAgent = navigator.userAgent.toLowerCase();
-    var isMobile = /iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
-    var isMac = /macintosh|mac os x/i.test(userAgent);
-    if (isMobile || isMac) return;
-    if (this.passive()) {
-      window.addEventListener("wheel", this.scrolling, {
-        passive: false
-      });
-    } else {
-      window.addEventListener("mousewheel", this.scrolling);
-      window.addEventListener("DOMMouseScroll", this.scrolling);
-    }
+    var self = this;
+    var nativeScroll = function nativeScroll() {
+      var userAgent = navigator.userAgent.toLowerCase();
+      var isMobile = /iphone|ipod|ipad|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+      var isMac = /macintosh|mac os x/i.test(userAgent);
+      var narrow = window.matchMedia("(max-width: 1023px), (pointer: coarse)").matches;
+      return isMobile || isMac || narrow;
+    };
+    var sync = function sync() {
+      self.destroy();
+      if (nativeScroll()) return;
+      if (self.passive()) {
+        window.addEventListener("wheel", self.scrolling, {
+          passive: false
+        });
+      } else {
+        window.addEventListener("mousewheel", self.scrolling);
+        window.addEventListener("DOMMouseScroll", self.scrolling);
+      }
+    };
+    sync();
+    window.addEventListener("resize", sync);
   },
   destroy: function destroy() {
     if (this.passive()) {
@@ -399,9 +412,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function introBanner() {
   document.querySelector("[data-current]");
   var bannerTitle = document.querySelector(".intro--banner_title");
-  var visualElement = document.querySelector(".intro--visual");
-  var visualWrap = document.querySelector(".intro--banner_bg");
   var intro = document.querySelector(".intro--banner");
+  var visualElement = document.querySelector(".intro--visual") || intro;
+  var visualWrap = document.querySelector(".intro--banner_bg") || intro;
   if (!intro) return;
   var introHeadAction = {
     enter: function enter() {
