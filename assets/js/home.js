@@ -557,9 +557,9 @@
         trigger: section,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 0.35,
+        scrub: true,
         pin: pinTarget,
-        anticipatePin: 0,
+        anticipatePin: 1,
         invalidateOnRefresh: true,
       },
     });
