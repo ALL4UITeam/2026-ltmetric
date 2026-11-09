@@ -2,6 +2,10 @@
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({
+    ignoreMobileResize: true,
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+  });
 
   function initHeroAnimation() {
     var hero = document.querySelector('.hero');
@@ -344,7 +348,10 @@
       else queue();
     });
 
+    var lastWidth = window.innerWidth;
     window.addEventListener('resize', function () {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
       if (tween) tween.kill();
       busy = false;
       var active = track.querySelector('.biz-slide__card.is-active') || cards[0];

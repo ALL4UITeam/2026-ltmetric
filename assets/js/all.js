@@ -477,7 +477,16 @@ function introBanner() {
   });
 }
 introBanner();
+if (typeof ScrollTrigger !== "undefined") {
+  ScrollTrigger.config({
+    ignoreMobileResize: true,
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+  });
+}
+var lastViewportWidth = window.innerWidth;
 window.addEventListener("resize", function() {
+  if (window.innerWidth === lastViewportWidth) return;
+  lastViewportWidth = window.innerWidth;
   ScrollTrigger.refresh();
 });
 document.addEventListener("DOMContentLoaded", function() {

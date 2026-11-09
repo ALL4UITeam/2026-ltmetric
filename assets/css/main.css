@@ -1354,6 +1354,13 @@ body:has(header.hide) #btnTop {
   background: 100% 100%;
   background-size: cover;
 }
+@media (max-width: 1023px) {
+  .intro--banner,
+  .intro--banner-background {
+    height: 100vh;
+    height: 100svh;
+  }
+}
 
 .intro--banner {
   background: none !important;
