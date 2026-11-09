@@ -526,8 +526,8 @@
   }
   .biz-dial {
     position: absolute;
-    top: 96px;
-    right: 16px;
+    top: 52px;
+    right: 12px;
     width: 112px;
     height: 112px;
     margin: 0;
@@ -558,9 +558,13 @@
     padding: 84px 0 20px;
   }
   .biz-dial {
-    top: 78px;
+    top: 48px;
+    right: 8px;
     width: 84px;
     height: 84px;
+  }
+  .biz-slide__summary {
+    margin-top: 32px;
   }
   .biz-slide__name,
   .biz-slide__card.is-settled .biz-slide__name {
