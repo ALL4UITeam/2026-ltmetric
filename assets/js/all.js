@@ -458,7 +458,7 @@ function introBanner() {
         introHeadAction.enter();
       },
       onLeaveBack: function onLeaveBack() {
-        introHeadAction.leave();
+        introHeadAction.enter();
       }
     }
   });
