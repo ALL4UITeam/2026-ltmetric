@@ -548,6 +548,45 @@
 
     if (!section || !pinTarget) return;
 
+    // 카카오톡 인앱은 툴바 때문에 vh가 변하고, fixed 핀이 스크롤보다 늦게 붙는다.
+    var inApp = /KAKAOTALK/i.test(navigator.userAgent || '');
+
+    function lockOverviewHeight() {
+      var height = window.innerHeight || document.documentElement.clientHeight;
+      if (!height) return;
+      var narrow = window.matchMedia('(max-width: 768px)').matches;
+      section.style.height = Math.round(height * 3.6) + 'px';
+      var inner = section.querySelector('.about-inner');
+      if (inner) inner.style.height = height + 'px';
+      var title = section.querySelector('.tit_wraps');
+      if (title) title.style.height = Math.round(height * (narrow ? 0.3 : 0.5)) + 'px';
+      var thumbs = section.querySelector('.end-thumbs-wrapper');
+      if (thumbs) thumbs.style.height = Math.round(height * (narrow ? 0.7 : 0.5)) + 'px';
+    }
+
+    if (inApp) {
+      document.documentElement.classList.add('is-inapp');
+      lockOverviewHeight();
+      if (typeof ScrollTrigger.normalizeScroll === 'function') {
+        ScrollTrigger.normalizeScroll({
+          allowNestedScroll: true,
+          lockAxis: true,
+          type: 'touch,pointer',
+        });
+      }
+      var lockedWidth = window.innerWidth;
+      window.addEventListener('resize', function () {
+        if (window.innerWidth === lockedWidth) return;
+        lockedWidth = window.innerWidth;
+        lockOverviewHeight();
+        ScrollTrigger.refresh();
+      });
+      window.addEventListener('load', function () {
+        lockOverviewHeight();
+        ScrollTrigger.refresh();
+      });
+    }
+
     gsap.set('#mainAbout .end-move-thumb', { y: 36, opacity: 0 });
     gsap.set('#mainAbout .end-titles-inner', { y: 20, opacity: 0 });
 
@@ -559,7 +598,7 @@
         end: 'bottom bottom',
         scrub: true,
         pin: pinTarget,
-        anticipatePin: 1,
+        anticipatePin: inApp ? 0 : 1,
         invalidateOnRefresh: true,
       },
     });

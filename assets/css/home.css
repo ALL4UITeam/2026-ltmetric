@@ -829,6 +829,11 @@
   background-color: #f1f6f9;
 }
 
+html.is-inapp,
+html.is-inapp body {
+  overscroll-behavior: none;
+}
+
 .about-stage {
   position: relative;
 }
